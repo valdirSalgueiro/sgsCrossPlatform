@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{b928ff02-2e96-4281-aa6e-119dc5e626fd}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Aabb.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Animation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\app.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Balloon.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Boss2.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Bullet_.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Easing.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Enemy.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Engine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\ft2build.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\gl2d.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\GLES11SpriteBatch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\GLES2SpriteBatch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\gmUtil.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Hellburguer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Intro.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Jetclaw.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\joystix.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Max.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\MonkSWF.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Player.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\SpriteBatch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Tammy.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Tween.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\Vector2D.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\vld.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\vldapi.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\zconf.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)game\zlib.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MathHelper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Balloon.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Boss2.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\bulletmlparser-tinyxml.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\bulletmlparser.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\bulletmlrunner.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\bulletmlrunnerimpl.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\bulletmltree.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\calc.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\command.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\formula-variables.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\object.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\bulletML\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Easing.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Enemy.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Engine.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FontAtlas.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FTBitmapChar.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FTBitmapFont.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\TreeNode.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\autofit\autofit.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbase.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbbox.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbdf.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbitmap.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftcid.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftdebug.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftfntfmt.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftfstype.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftgasp.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftglyph.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftgxval.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftinit.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftlcdfil.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftmm.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftotval.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftpatent.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftpfr.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftstroke.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftsynth.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftsystem.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\fttype1.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftwinfnt.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\bdf\bdf.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\bzip2\ftbzip2.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\cache\ftcache.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\cff\cff.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\cid\type1cid.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\gzip\ftgzip.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\lzw\ftlzw.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\pcf\pcf.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\pfr\pfr.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\psaux\psaux.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\pshinter\pshinter.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\psnames\psnames.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\raster\raster.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\sfnt\sfnt.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\smooth\smooth.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\truetype\truetype.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\type1\type1.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\type42\type42.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\winfonts\winfnt.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\gl2d.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\GLES2SpriteBatch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Hellburguer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Intro.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Jetclaw.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Max.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Player.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\png.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngerror.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngget.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngmem.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngpread.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngread.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngrio.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngrtran.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngrutil.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngset.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngtest.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngtrans.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwio.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwrite.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwtran.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwutil.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\sound.cpp">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\SpriteBatch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Tammy.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Tween.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\adler32.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\compress.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\crc32.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\deflate.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzclose.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzlib.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzread.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzwrite.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\infback.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\inffast.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\inflate.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\inftrees.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\trees.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\uncompr.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\zutil.c" />
+  </ItemGroup>
+</Project>

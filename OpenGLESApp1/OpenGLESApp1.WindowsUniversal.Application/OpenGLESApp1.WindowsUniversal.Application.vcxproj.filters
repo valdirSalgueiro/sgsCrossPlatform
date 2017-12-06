@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="pch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\SmallLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\WideLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Logo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\res\1.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\balloon.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\boss2_1.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\boss2_2.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\explosao.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\explosao2.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\hb.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\intro.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\jetclaw.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\jetclawExplosion.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\level1.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\max.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\mecha.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\tammy.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\tiro.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OpenGLESApp1_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="$(angle-BinPath)\libEGL.dll" />
+    <None Include="$(angle-BinPath)\libGLESv2.dll" />
+    <None Include="..\res\SGSMovie.avi">
+      <Filter>Assets\game</Filter>
+    </None>
+    <None Include="D:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Universal Windows Platform\api\lowlevel\lib\fmod_X64.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{d16954bb-de54-472b-ac10-ecab10d3fdc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\game">
+      <UniqueIdentifier>{f3528bb0-c8ab-4437-a779-f38bf3c9f0e6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\res\warning.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\alien1.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\aliendie1.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\alienTiro1.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\bossdie.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\explosion.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\ship.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\tiro.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+  </ItemGroup>
+</Project>
