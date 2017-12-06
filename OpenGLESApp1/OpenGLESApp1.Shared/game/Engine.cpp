@@ -204,11 +204,11 @@ int boss=0;
 bool naveSoundPlayed;
 
 sound* explosionSound;
-//sound* aliendie;
-//sound* warning;
-//sound* naveSound;
-//sound* alien1;
-//sound* alienTiro1;
+sound* aliendie;
+sound* warning;
+sound* naveSound;
+sound* alien1;
+sound* alienTiro1;
 bool warningPlayed=false;
 
 void Engine::init(int width_, int height_){
@@ -253,11 +253,11 @@ void Engine::init(int width_, int height_){
 
 	wcsound_start();
 	explosionSound=new sound("explosion.wav",25,100,50);
-	//aliendie=new sound("aliendie1.wav",25,100,50);
-	//warning=new sound("../res/warning.wav",100,100,50);
-	//alien1=new sound("../res/alien1.wav",100,100,50);
-	//naveSound=new sound("../res/ship.wav",100,100,50);
-	//alienTiro1=new sound("../res/alienTiro1.wav",100,100,50);
+	aliendie=new sound("aliendie1.wav",25,100,50);
+	warning=new sound("warning.wav",100,100,50);
+	alien1=new sound("alien1.wav",100,100,50);
+	naveSound=new sound("ship.wav",100,100,50);
+	alienTiro1=new sound("alienTiro1.wav",100,100,50);
 
 	glLoadSpriteset("level1.png",level1,2048,2048,13,level1_texcoords,0);
 
@@ -429,7 +429,7 @@ void Engine::update(float time){
 		}else{
 
 			if(!naveSoundPlayed && frames>1900){ //nave some em 5800
-				//naveSound->play();
+				naveSound->play();
 				naveSoundPlayed=true;
 			}
 
@@ -466,8 +466,7 @@ void Engine::update(float time){
 								animation->y=playerObjs[j]->y;
 								animation->type=Animation::ExplosionAlien;
 
-								//explosionSound->play();
-
+								explosionSound->play();
 
 								animations.push_back(animation);
 							}else{
@@ -478,7 +477,7 @@ void Engine::update(float time){
 								animation->type=Animation::JetclawExplosion;
 								animations.push_back(animation);	
 
-								//aliendie->play();
+								aliendie->play();
 
 								enemies[i]->cleanUp();
 								enemies[i]->isAlive=false;		
@@ -810,15 +809,13 @@ void Engine::render(float time){
 		
 		if(boss!=0 && frames-bossTime<300){
 			if(frames-bossTime==200){
-				#ifdef WIN32
-					//alien1->play();
-				#endif
+				alien1->play();
 			}
 			if(frames%30<15){
 				warningPlayed=false;
 			}else{
 				if(!warningPlayed){
-					//warning->play();
+					warning->play();
 					warningPlayed=true;
 				}
 				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(320,240,"WARNING!",0xff0000,0x000000);
@@ -835,7 +832,7 @@ void Engine::render(float time){
 				warningPlayed=false;
 			}else{
 				if(!warningPlayed){
-					//warning->play();
+					warning->play();
 					warningPlayed=true;
 				}
 				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(400-widths[6]/2,240,"MISSION START!",0xffffff,0x000000);
@@ -882,4 +879,10 @@ void Engine::handleInput(int type,int direction_){
 		}
 	}
 	direction=direction_;
+}
+
+
+void Engine::setTouch(bool _touch) 
+{
+	touch = _touch;
 }

@@ -3,6 +3,7 @@
 #include <string>
 
 #include "pch.h"
+#include <collection.h>
 
 class Engine;
 
@@ -18,6 +19,7 @@ namespace OpenGLESApp1
         virtual void SetWindow(Windows::UI::Core::CoreWindow^ window);
         virtual void Load(Platform::String^ entryPoint);
         virtual void Run();
+		void ProcessInput();
         virtual void Uninitialize();
 
     private:
@@ -29,6 +31,8 @@ namespace OpenGLESApp1
         // Window event handlers.
         void OnVisibilityChanged(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::VisibilityChangedEventArgs^ args);
         void OnWindowClosed(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::CoreWindowEventArgs^ args);
+		void OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args);
+		void OnKeyUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args);
 
         void InitializeEGL(Windows::UI::Core::CoreWindow^ window);
         void CleanupEGL();
@@ -41,6 +45,20 @@ namespace OpenGLESApp1
         EGLSurface mEglSurface;
 
         std::unique_ptr<Engine> engine;
+
+		int dir;
+
+		//gamepads
+		Windows::Gaming::Input::Gamepad^ GetLastGamepad();
+		Platform::Collections::Vector<Windows::Gaming::Input::Gamepad^>^ m_localCollection;
+		Windows::Gaming::Input::GamepadReading      m_reading;
+		Windows::Gaming::Input::Gamepad^            m_currentGamepad;
+
+		bool m_currentGamepadNeedsRefresh;
+
+		bool touch;
     };
+
+
 
 }

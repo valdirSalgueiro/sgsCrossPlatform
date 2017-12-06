@@ -2,9 +2,8 @@
 #include "Hellburguer.h"
 #include "gmUtil.h"
 
-#ifdef WIN32
-//	#include "../sound.h"
-#endif
+#include "sound.h"
+
 
 
 const unsigned int hellburguer_texcoords[] = {
@@ -38,7 +37,7 @@ glImage sprHB[24];
 int hbAnimation=0;
 
 extern std::vector<Object*> objs;
-//extern sound* alienTiro1;
+extern sound* alienTiro1;
 
 Hellburguer::Hellburguer(){
 	std::string bulletPattern("<bulletml type=\"vertical\" xmlns=\"http://www.asahi-net.or.jp/~cs8k-cyu/bulletml\"><action label=\"top\"><fire><direction type=\"absolute\">0</direction><bulletRef label=\"curved\" /></fire><fire><direction type=\"absolute\">180</direction><bulletRef label=\"curved\" /></fire></action><bullet label=\"curved\"><action><changeDirection><direction type=\"absolute\">-90</direction><term>30</term></changeDirection><wait>30</wait><fire><bullet /></fire></action></bullet></bulletml>");
@@ -104,9 +103,7 @@ bool Hellburguer::update(float time) {
 
 
 	if(loops%180==0){
-#ifdef WIN32
-//		alienTiro1->play();
-#endif
+		alienTiro1->play();
 		objs.push_back(new Bullet(bp, pos.x, pos.y, 0, 0,COMMON));
 	}
 

@@ -7,9 +7,13 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.content.pm.ActivityInfo;
+import android.view.MotionEvent;
+
 
 public class Main extends NativeActivity
 {
+
+	public boolean wantsMultitouch=false;
 
 	public void onCreate(Bundle savedInstanceState) 
 	{
@@ -33,6 +37,7 @@ public class Main extends NativeActivity
         org.fmod.FMOD.close();
     }
 
+
 	static
 	{
 		Log.v("Main","loading");
@@ -40,6 +45,8 @@ public class Main extends NativeActivity
 		System.loadLibrary("fmodstudio"); 		
 		System.loadLibrary("OpenGLESApp1"); 
 	}
+
+
 
 
 

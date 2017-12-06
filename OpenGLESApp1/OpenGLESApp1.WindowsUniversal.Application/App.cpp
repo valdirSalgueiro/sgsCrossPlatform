@@ -10,10 +10,12 @@ using namespace Windows::ApplicationModel::Core;
 using namespace Windows::ApplicationModel::Activation;
 using namespace Windows::UI::Core;
 using namespace Windows::UI::Input;
+using namespace Windows::Gaming::Input;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
 using namespace Windows::Graphics::Display;
 using namespace Microsoft::WRL;
+using namespace Platform::Collections;
 using namespace Platform;
 
 using namespace OpenGLESApp1;
@@ -53,6 +55,18 @@ App::App() :
 {
 }
 
+Gamepad^ App::GetLastGamepad()
+{
+	Gamepad^ gamepad = nullptr;
+
+	if (m_localCollection->Size > 0)
+	{
+		gamepad = m_localCollection->GetAt(m_localCollection->Size - 1);
+	}
+
+	return gamepad;
+}
+
 // The first method called when the IFrameworkView is being created.
 void App::Initialize(CoreApplicationView^ applicationView)
 {
@@ -61,9 +75,32 @@ void App::Initialize(CoreApplicationView^ applicationView)
 	applicationView->Activated +=
 		ref new TypedEventHandler<CoreApplicationView^, IActivatedEventArgs^>(this, &App::OnActivated);
 
-	// Logic for other event handlers could go here.
-	// Information about the Suspending and Resuming event handlers can be found here:
-	// http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh994930.aspx
+	m_localCollection = ref new Vector<Gamepad^>();
+
+	auto gamepads = Gamepad::Gamepads;
+	for (auto gamepad : gamepads)
+	{
+		m_localCollection->Append(gamepad);
+	}
+
+	Gamepad::GamepadAdded += ref new EventHandler<Gamepad^ >([=](Platform::Object^, Gamepad^ args)
+	{
+		m_localCollection->Append(args);
+		m_currentGamepadNeedsRefresh = true;
+	});
+
+	Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^ >([=](Platform::Object^, Gamepad^ args)
+	{
+		unsigned int index;
+		if (m_localCollection->IndexOf(args, &index))
+		{
+			m_localCollection->RemoveAt(index);
+			m_currentGamepadNeedsRefresh = true;
+		}
+	});
+
+	m_currentGamepad = GetLastGamepad();
+	m_currentGamepadNeedsRefresh = false;
 }
 
 // Called when the CoreWindow object is created (or re-created).
@@ -74,6 +111,9 @@ void App::SetWindow(CoreWindow^ window)
 
 	window->Closed +=
 		ref new TypedEventHandler<CoreWindow^, CoreWindowEventArgs^>(this, &App::OnWindowClosed);
+
+	window->KeyDown += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &App::OnKeyDown);
+	window->KeyUp += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &App::OnKeyUp);
 
 	// The CoreWindow has been created, so EGL can be initialized.
 	InitializeEGL(window);
@@ -102,17 +142,19 @@ void App::Run()
 	eglQuerySurface(mEglDisplay, mEglSurface, EGL_HEIGHT, &panelHeight);
 	engine->init(800, 480);
 
-
 	while (!mWindowClosed)
 	{
 		if (mWindowVisible)
 		{
 			CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
 
+			ProcessInput();
+
 
 			// Logic to update the scene could go here
 			//engine->UpdateWindowSize(panelWidth, panelHeight);
 			//engine->Draw();
+			engine->handleInput(1, dir);
 			engine->update(0);
 			engine->render(0);
 
@@ -136,6 +178,52 @@ void App::Run()
 	CleanupEGL();
 }
 
+void OpenGLESApp1::App::ProcessInput()
+{
+	if (m_currentGamepadNeedsRefresh)
+	{
+		auto mostRecentGamepad = GetLastGamepad();
+		if (m_currentGamepad != mostRecentGamepad)
+		{
+			m_currentGamepad = mostRecentGamepad;
+		}
+		m_currentGamepadNeedsRefresh = false;
+	}
+
+	float leftStickX = m_reading.LeftThumbstickX;   // returns a value between -1.0 and +1.0
+	float leftStickY = m_reading.LeftThumbstickY;   // returns a value between -1.0 and +1.0
+													// choose a deadzone -- readings inside this radius are ignored.
+	const float deadzoneRadius = 0.1;
+	const float deadzoneSquared = deadzoneRadius * deadzoneRadius;
+
+	// Pythagorean theorem -- for a right triangle, hypotenuse^2 = (opposite side)^2 + (adjacent side)^2
+	auto oppositeSquared = leftStickY * leftStickY;
+	auto adjacentSquared = leftStickX * leftStickX;
+
+	// accept and process input if true; otherwise, reject and ignore it.
+	if ((oppositeSquared + adjacentSquared) > deadzoneSquared)
+	{
+		dir = 0;
+		if (leftStickX <= -0.1)
+			dir |= Engine::DIRECTION::LEFT;
+		else if (leftStickX >= 0.1)
+			dir |= Engine::DIRECTION::RIGHT;
+		if (leftStickY <= -0.1)
+			dir |= Engine::DIRECTION::UP;
+		else if (leftStickY >= 0.1)
+			dir |= Engine::DIRECTION::DOWN;
+	}
+
+	if ((m_reading.Buttons & GamepadButtons::A) == GamepadButtons::A)
+	{
+		engine->setTouch(true);
+	}
+	else if (GamepadButtons::None == (m_reading.Buttons & GamepadButtons::A))
+	{
+		engine->setTouch(false);
+	}
+}
+
 // Terminate events do not cause Uninitialize to be called. It will be called if your IFrameworkView
 // class is torn down while the app is in the foreground.
 void App::Uninitialize()
@@ -147,7 +235,7 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 {
 	// Run() won't start until the CoreWindow is activated.
 	CoreWindow::GetForCurrentThread()->Activate();
-	
+
 }
 
 // Window event handlers.
@@ -159,6 +247,53 @@ void App::OnVisibilityChanged(CoreWindow^ sender, VisibilityChangedEventArgs^ ar
 void App::OnWindowClosed(CoreWindow^ sender, CoreWindowEventArgs^ args)
 {
 	mWindowClosed = true;
+}
+
+extern bool touch;
+
+void App::OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args)
+{
+	switch (args->VirtualKey)
+	{
+	case Windows::System::VirtualKey::Right:
+		dir |= Engine::DIRECTION::RIGHT;
+		break;
+	case Windows::System::VirtualKey::Left:
+		dir |= Engine::DIRECTION::LEFT;
+		break;
+	case Windows::System::VirtualKey::Up:
+		dir |= Engine::DIRECTION::UP;
+		break;
+	case Windows::System::VirtualKey::Down:
+		dir |= Engine::DIRECTION::DOWN;
+		break;
+	case Windows::System::VirtualKey::Z:
+		touch = true;
+		break;
+	}
+
+}
+
+void App::OnKeyUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args)
+{
+	switch (args->VirtualKey)
+	{
+	case Windows::System::VirtualKey::Right:
+		dir &= ~Engine::DIRECTION::RIGHT;
+		break;
+	case Windows::System::VirtualKey::Left:
+		dir &= ~Engine::DIRECTION::LEFT;
+		break;
+	case Windows::System::VirtualKey::Up:
+		dir &= ~Engine::DIRECTION::UP;
+		break;
+	case Windows::System::VirtualKey::Down:
+		dir &= ~Engine::DIRECTION::DOWN;
+		break;
+	case Windows::System::VirtualKey::Z:
+		touch = false;
+		break;
+	}
 }
 
 void App::InitializeEGL(CoreWindow^ window)

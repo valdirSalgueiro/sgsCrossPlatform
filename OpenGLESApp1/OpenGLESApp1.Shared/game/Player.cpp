@@ -3,9 +3,7 @@
 #include "gmUtil.h"
 #include "Bullet_.h"
 
-#ifdef WIN32
-//#include "../sound.h"
-#endif
+#include "../sound.h"
 
 #include "../bulletML/object.h"
 #include "bulletmlparser.h"
@@ -31,9 +29,7 @@ bool isShooting;
 	
 extern bool touch;
 
-#ifdef WIN32
-//sound* tiro;
-#endif
+sound* tiro;
 
 int jetAnimation=2;
 
@@ -88,9 +84,7 @@ Player::Player(){
 	glLoadSpriteset("mecha.png",spr,1024,1024,22,sprite_texcoords,0);
 	glLoadSpriteset("1.png",sprBullet,256,512,4,bullet_texcoords,0);
 
-#ifdef WIN32
-	//tiro=new sound("../res/tiro.wav",25,100,50);
-#endif
+	tiro=new sound("../res/tiro.wav",25,100,50);
 	shot=&sprBullet[3];
 
 
@@ -115,9 +109,7 @@ bool Player::update(float time) {
 	loops++;
 
 	if(touch && !isShooting){
-#ifdef WIN32
-		//tiro->play();
-#endif		
+		tiro->play();
 		isShooting=true;
 		bulletAnimation=0;
 		if(powerUp==0){

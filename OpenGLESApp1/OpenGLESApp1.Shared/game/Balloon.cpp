@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Balloon.h"
 #include "gmUtil.h"
-//#include "../sound.h"
+#include "sound.h"
 
 const unsigned int balloon_texcoords[] = {
 0,0,162,448, // 0        balloon0006.png
@@ -40,7 +40,7 @@ extern int shield;
 extern int score;
 extern int bossMode;
 
-//extern sound* alienTiro1;
+extern sound* alienTiro1;
 
 
 
@@ -102,14 +102,10 @@ bool Balloon::update(float time) {
 	}
 	
 	if(loops%500==0){
-#ifdef WIN32
-		//alienTiro1->play();
-#endif
+		alienTiro1->play();
 		objs.push_back(new Bullet(bps[1], pos.x, pos.y, 0, 0,BOSS));
 	}else if(loops%180==0){
-		#ifdef WIN32
-		//alienTiro1->play();
-#endif
+		alienTiro1->play();
 		objs.push_back(new Bullet(bps[0], pos.x, pos.y, 0, 0,BOSS));
 	}
 

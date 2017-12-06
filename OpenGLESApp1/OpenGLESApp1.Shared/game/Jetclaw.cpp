@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Jetclaw.h"
 #include "gmUtil.h"
-//#include "../sound.h"
+#include "sound.h"
 
 const unsigned int jetclaw_texcoords[] = {
 0,0,493,239, // 0        jetclaw0007.png
@@ -17,7 +17,7 @@ extern std::vector<Object*> objs;
 
 glImage sprJetclaw[7];
 int jetclawAnimation=0;
-//extern sound* alienTiro1;
+extern sound* alienTiro1;
 
 
 Jetclaw::Jetclaw(){
@@ -77,9 +77,7 @@ bool Jetclaw::update(float time) {
 
 
 	if(loops%180==0){
-#ifdef WIN32
-//		alienTiro1->play();
-#endif
+		alienTiro1->play();
 		objs.push_back(new Bullet(bp, pos.x, pos.y, 0, 0,COMMON));
 	}
 

@@ -39,6 +39,8 @@ public:
 
 	void reset();
 
+	void setTouch(bool);
+
 	enum STATE{
 		LOGO1,
 		LOGO2,

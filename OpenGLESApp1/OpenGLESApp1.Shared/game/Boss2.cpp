@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Boss2.h"
 #include "gmUtil.h"
-//#include "../sound.h"
+#include "sound.h"
 
 int numframes;
 
@@ -51,7 +51,7 @@ extern int frames;
 
 int olDenergyBoss2=0;
 extern int powerUpTime;
-//extern sound* alienTiro1;
+extern sound* alienTiro1;
 
 
 Boss2::Boss2(){
@@ -121,14 +121,10 @@ bool Boss2::update(float time) {
 
 
 	if(loops%90==0){
-#ifdef WIN32
-		//alienTiro1->play();
-#endif
+		alienTiro1->play();
 		objs.push_back(new Bullet(bps[1], pos.x, pos.y, 0, 0,BOSS));
 	}else if(loops%30==0){
-		#ifdef WIN32
-		//alienTiro1->play();
-#endif
+		alienTiro1->play();
 		objs.push_back(new Bullet(bps[0], pos.x, pos.y, 0, 0,BOSS));
 	}
 

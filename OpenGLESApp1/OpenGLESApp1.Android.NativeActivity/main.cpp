@@ -66,11 +66,11 @@ static int engine_init_display(struct engine* engine) {
 		EGL_SURFACE_TYPE, EGL_WINDOW_BIT,
 		EGL_BLUE_SIZE, 8,
 		EGL_GREEN_SIZE, 8,
-        EGL_RED_SIZE, 8,
-        EGL_ALPHA_SIZE, 8,
-        EGL_DEPTH_SIZE, 8,
-        EGL_STENCIL_SIZE, 8,
-        EGL_NONE
+		EGL_RED_SIZE, 8,
+		EGL_ALPHA_SIZE, 8,
+		EGL_DEPTH_SIZE, 8,
+		EGL_STENCIL_SIZE, 8,
+		EGL_NONE
 	};
 	EGLint w, h, format;
 	EGLint numConfigs;
@@ -163,14 +163,80 @@ static void engine_term_display(struct engine* engine) {
 	engine->surface = EGL_NO_SURFACE;
 }
 
+
+#define THUMB_RADIUS 48.0f
+#define JOYSTICK_RADIUS 64.0f
+
+bool isPressedPos = false;
+extern bool touch;
+int touchDirection = 0;
+
+bool isPointInCircle(Vector2D<float> point, Vector2D<float> center, float radius) {
+	float dx = (point.x - center.x);
+	float dy = (point.y - center.y);
+	return (radius*radius >= (dx * dx) + (dy * dy));
+}
+
 /**
 * Process the next input event.
 */
 static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) {
 	struct engine* engine = (struct engine*)app->userData;
 	if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION) {
-		engine->state.x = AMotionEvent_getX(event, 0);
-		engine->state.y = AMotionEvent_getY(event, 0);
+		float x = AMotionEvent_getX(event, 0);
+		float y = AMotionEvent_getY(event, 0);
+		x *= 800.0f/engine->width;
+		y *= 480.0f/engine->height;
+
+		int motion = AMotionEvent_getAction(event);
+		unsigned int action = motion & AMOTION_EVENT_ACTION_MASK;
+
+		if (engine->engine != NULL) {
+			if (action == AMOTION_EVENT_ACTION_DOWN) {
+				if (isPointInCircle(Vector2D<float>(x, y), Vector2D<float>(engine->engine->controlBasePos), JOYSTICK_RADIUS)) {
+					isPressedPos = true;
+				}
+				touch = true;
+
+			}
+			else if (action == AMOTION_EVENT_ACTION_UP)
+			{
+				isPressedPos = false;
+				engine->engine->controlKnobPos = engine->engine->controlBasePos;
+				touchDirection = 0;
+				touch = false;
+			}
+
+			if (isPressedPos) {
+				//DPAD
+				float dx = x - engine->engine->controlBasePos.x;
+				float dy = y - engine->engine->controlBasePos.y;
+				float angle = atan2(dy, dx); // in radians
+
+				float anglePerSector = 360.0f / 4 * (M_PI / 180.0f);
+				angle = roundf(angle / anglePerSector) * anglePerSector;
+
+				Vector2D<float> velocity = Vector2D<float>(cos(angle), sin(angle));
+
+				engine->engine->controlKnobPos.x = engine->engine->controlBasePos.x + cos(angle) * THUMB_RADIUS;
+				engine->engine->controlKnobPos.y = engine->engine->controlBasePos.y + sin(angle) * THUMB_RADIUS;
+
+				touchDirection = 0;
+				if (((int)velocity.x) == -1) {
+					touchDirection |= Engine::DIRECTION::LEFT;
+				}
+				else if (((int)velocity.y) == 1) {
+					touchDirection |= Engine::DIRECTION::DOWN;
+				}
+				else if (((int)velocity.x) == 1) {
+					touchDirection |= Engine::DIRECTION::RIGHT;
+				}
+				else if (((int)velocity.y) == -1) {
+					touchDirection |= Engine::DIRECTION::UP;
+				}
+			}
+			engine->engine->handleInput(1, touchDirection);
+		}
 		return 1;
 	}
 	return 0;
@@ -301,3 +367,4 @@ void android_main(struct android_app* state) {
 		}
 	}
 }
+
