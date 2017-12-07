@@ -75,6 +75,8 @@ Balloon::~Balloon(){
 
 
 bool Balloon::update(float time) {
+	Enemy::update(time);
+
 	pos+=dir; 
 	loops++; 
 

@@ -116,6 +116,10 @@ void main(void)
 	texCoord = (vertex.xy + vec2(0.5, 0.5)) * vec2(thisim[1][2], thisim[1][3]) + vec2(thisim[0][2], thisim[0][3]);
 });
 
+extern float elapsedTime;
+extern float shakeAmount;
+extern bool shakeScreen;
+
 GLES2SpriteBatch::GLES2SpriteBatch(int w, int h) : SpriteBatch(w, h)
 {
 	for (int f = 0; f < COSINE_TABLE_SIZE; f++)
@@ -373,6 +377,10 @@ void GLES2SpriteBatch::begin(BlendMode bmode, TransformMode dTransform, float *c
 		0, 0, 1, 0,
 		0,0, 0, 1,
 	};
+	if (shakeScreen) {
+		mproj[3] += cos((elapsedTime / 0.1) * 2 * 3.14159) * shakeAmount;
+	}
+
 	memcpy(projectionMatrix, mproj, 16 * sizeof(GLfloat));
 
 

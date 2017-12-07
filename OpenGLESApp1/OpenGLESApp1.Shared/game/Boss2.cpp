@@ -99,6 +99,7 @@ Boss2::~Boss2(){
 
 
 bool Boss2::update(float time) {
+	Enemy::update(time);
 	pos+=dir; 
 	loops++; 
 

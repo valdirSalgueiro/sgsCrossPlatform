@@ -40,10 +40,11 @@ public:
 		Creates a new music that plays normally
 	*/
 	music(char *f);
+	music(char *f, int v, int);
 	/*
 		Creates a new music that playes with the given tempo, volume, and balance
 	*/
-	music(char *f,int v,int t,int b,int li);
+	music(char *f, int v, int t, int b, int li);
 	/*
 		Creates a new music from stream
 	*/
@@ -71,10 +72,14 @@ public:
 	int get_leadin();
 };
 
+namespace FMOD {
+	class Channel;
+}
+
 class sound
 {
 private:
-	void *ch;
+	FMOD::Channel *chan;
 	void *data;
 	char *filename;
 	int volume;
@@ -87,14 +92,14 @@ private:
 	/*
 		Initializes sound
 	*/
-	void init(char *f,int v,int t,int b);
+	void init(char *f, int v, int t, int b);
 public:
 	/*
 		Creates a new sound
 	*/
-	sound(char *f,int v,int t,int b);
+	sound(char *f, int v, int t, int b);
 	/*
-		Creates a new sound from data 
+		Creates a new sound from data
 	*/
 	sound(void *vp);
 	/*
@@ -163,7 +168,7 @@ extern char *wcsound_get_file();
 /*
 	Sets the music volume slide
 */
-extern void wcsound_set_volume_slide(float fv,float dv,int t);
+extern void wcsound_set_volume_slide(float fv, float dv, int t);
 
 /*
 	Memorize song (entering battle)
@@ -183,5 +188,7 @@ extern int wcsound_get_music_tempo();
 extern int wcsound_get_music_balance();
 extern int wcsound_get_music_leadin();
 extern char *wcsound_get_music_name();
+
+extern void wcsound_update();
 
 #endif

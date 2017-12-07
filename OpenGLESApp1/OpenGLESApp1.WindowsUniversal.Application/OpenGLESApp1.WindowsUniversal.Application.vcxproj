@@ -151,6 +151,7 @@
     <Media Include="..\res\alienTiro1.wav" />
     <Media Include="..\res\bossdie.wav" />
     <Media Include="..\res\explosion.wav" />
+    <Media Include="..\res\level1.mp3" />
     <Media Include="..\res\ship.wav" />
     <Media Include="..\res\tiro.wav" />
     <Media Include="..\res\warning.wav" />

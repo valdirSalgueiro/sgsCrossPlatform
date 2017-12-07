@@ -128,6 +128,8 @@ static int engine_init_display(struct engine* engine) {
 	return 0;
 }
 
+const float FPS = 1 / 60.0f;
+
 /**
 * Just the current frame in the display.
 */
@@ -137,8 +139,8 @@ static void engine_draw_frame(struct engine* engine) {
 		return;
 	}
 
-	engine->engine->update(0);
-	engine->engine->render(0);
+	engine->engine->update(FPS);
+	engine->engine->render(FPS);
 
 	eglSwapBuffers(engine->display, engine->surface);
 }

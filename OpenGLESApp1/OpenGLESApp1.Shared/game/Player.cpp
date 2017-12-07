@@ -84,7 +84,7 @@ Player::Player(){
 	glLoadSpriteset("mecha.png",spr,1024,1024,22,sprite_texcoords,0);
 	glLoadSpriteset("1.png",sprBullet,256,512,4,bullet_texcoords,0);
 
-	tiro=new sound("../res/tiro.wav",25,100,50);
+	tiro=new sound("tiro.wav",25,100,50);
 	shot=&sprBullet[3];
 
 

@@ -25,6 +25,7 @@ public:
 	virtual bool render(float time)=0;
 	virtual void init();
 	virtual void cleanUp();
+	virtual void hurt();
 	virtual bool collides(Vector2D<float> pos,Vector2D<float> size);
 
 	Vector2D<float> pos;
@@ -46,7 +47,8 @@ public:
 	int energy;
 
 
-
+	bool wasHurt;
+	float hurtTimer;
 };
 
 #endif

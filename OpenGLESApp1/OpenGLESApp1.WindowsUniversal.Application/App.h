@@ -49,14 +49,10 @@ namespace OpenGLESApp1
 		int dir;
 
 		//gamepads
-		Windows::Gaming::Input::Gamepad^ GetLastGamepad();
 		Platform::Collections::Vector<Windows::Gaming::Input::Gamepad^>^ m_localCollection;
 		Windows::Gaming::Input::GamepadReading      m_reading;
-		Windows::Gaming::Input::Gamepad^            m_currentGamepad;
 
-		bool m_currentGamepadNeedsRefresh;
 
-		bool touch;
     };
 
 

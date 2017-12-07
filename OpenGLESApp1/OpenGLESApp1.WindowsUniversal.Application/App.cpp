@@ -55,18 +55,6 @@ App::App() :
 {
 }
 
-Gamepad^ App::GetLastGamepad()
-{
-	Gamepad^ gamepad = nullptr;
-
-	if (m_localCollection->Size > 0)
-	{
-		gamepad = m_localCollection->GetAt(m_localCollection->Size - 1);
-	}
-
-	return gamepad;
-}
-
 // The first method called when the IFrameworkView is being created.
 void App::Initialize(CoreApplicationView^ applicationView)
 {
@@ -77,30 +65,6 @@ void App::Initialize(CoreApplicationView^ applicationView)
 
 	m_localCollection = ref new Vector<Gamepad^>();
 
-	auto gamepads = Gamepad::Gamepads;
-	for (auto gamepad : gamepads)
-	{
-		m_localCollection->Append(gamepad);
-	}
-
-	Gamepad::GamepadAdded += ref new EventHandler<Gamepad^ >([=](Platform::Object^, Gamepad^ args)
-	{
-		m_localCollection->Append(args);
-		m_currentGamepadNeedsRefresh = true;
-	});
-
-	Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^ >([=](Platform::Object^, Gamepad^ args)
-	{
-		unsigned int index;
-		if (m_localCollection->IndexOf(args, &index))
-		{
-			m_localCollection->RemoveAt(index);
-			m_currentGamepadNeedsRefresh = true;
-		}
-	});
-
-	m_currentGamepad = GetLastGamepad();
-	m_currentGamepadNeedsRefresh = false;
 }
 
 // Called when the CoreWindow object is created (or re-created).
@@ -133,6 +97,8 @@ void App::RecreateRenderer()
 	}
 }
 
+const float FPS = 1 / 60.0f;
+
 // This method is called after the window becomes active.
 void App::Run()
 {
@@ -155,8 +121,8 @@ void App::Run()
 			//engine->UpdateWindowSize(panelWidth, panelHeight);
 			//engine->Draw();
 			engine->handleInput(1, dir);
-			engine->update(0);
-			engine->render(0);
+			engine->update(FPS);
+			engine->render(FPS);
 
 			// The call to eglSwapBuffers might not be successful (e.g. due to Device Lost)
 			// If the call fails, then we must reinitialize EGL and the GL resources.
@@ -180,15 +146,10 @@ void App::Run()
 
 void OpenGLESApp1::App::ProcessInput()
 {
-	if (m_currentGamepadNeedsRefresh)
-	{
-		auto mostRecentGamepad = GetLastGamepad();
-		if (m_currentGamepad != mostRecentGamepad)
-		{
-			m_currentGamepad = mostRecentGamepad;
-		}
-		m_currentGamepadNeedsRefresh = false;
-	}
+	if (Gamepad::Gamepads->Size == 0)
+		return;
+
+	auto m_reading = Gamepad::Gamepads->First()->Current->GetCurrentReading();
 
 	float leftStickX = m_reading.LeftThumbstickX;   // returns a value between -1.0 and +1.0
 	float leftStickY = m_reading.LeftThumbstickY;   // returns a value between -1.0 and +1.0
@@ -201,17 +162,17 @@ void OpenGLESApp1::App::ProcessInput()
 	auto adjacentSquared = leftStickX * leftStickX;
 
 	// accept and process input if true; otherwise, reject and ignore it.
+	dir = 0;
 	if ((oppositeSquared + adjacentSquared) > deadzoneSquared)
 	{
-		dir = 0;
 		if (leftStickX <= -0.1)
 			dir |= Engine::DIRECTION::LEFT;
 		else if (leftStickX >= 0.1)
 			dir |= Engine::DIRECTION::RIGHT;
 		if (leftStickY <= -0.1)
-			dir |= Engine::DIRECTION::UP;
-		else if (leftStickY >= 0.1)
 			dir |= Engine::DIRECTION::DOWN;
+		else if (leftStickY >= 0.1)
+			dir |= Engine::DIRECTION::UP;
 	}
 
 	if ((m_reading.Buttons & GamepadButtons::A) == GamepadButtons::A)
@@ -249,51 +210,50 @@ void App::OnWindowClosed(CoreWindow^ sender, CoreWindowEventArgs^ args)
 	mWindowClosed = true;
 }
 
-extern bool touch;
+
+
+static void tracef(char* lpszBuffer)
+{
+#ifdef _DEBUG
+	::OutputDebugStringA(lpszBuffer);
+#endif
+}
 
 void App::OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args)
 {
-	switch (args->VirtualKey)
-	{
-	case Windows::System::VirtualKey::Right:
+	if (args->VirtualKey == Windows::System::VirtualKey::Right)
 		dir |= Engine::DIRECTION::RIGHT;
-		break;
-	case Windows::System::VirtualKey::Left:
+	else if (args->VirtualKey == Windows::System::VirtualKey::Left)
 		dir |= Engine::DIRECTION::LEFT;
-		break;
-	case Windows::System::VirtualKey::Up:
+
+	if (args->VirtualKey == Windows::System::VirtualKey::Up)
 		dir |= Engine::DIRECTION::UP;
-		break;
-	case Windows::System::VirtualKey::Down:
+	else if (args->VirtualKey == Windows::System::VirtualKey::Down)
 		dir |= Engine::DIRECTION::DOWN;
-		break;
-	case Windows::System::VirtualKey::Z:
-		touch = true;
-		break;
-	}
+
+	if (args->VirtualKey == Windows::System::VirtualKey::Z)
+		engine->setTouch(true);
+
 
 }
 
 void App::OnKeyUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args)
 {
-	switch (args->VirtualKey)
-	{
-	case Windows::System::VirtualKey::Right:
+	if (args->VirtualKey == Windows::System::VirtualKey::Right)
 		dir &= ~Engine::DIRECTION::RIGHT;
-		break;
-	case Windows::System::VirtualKey::Left:
+
+	if (args->VirtualKey == Windows::System::VirtualKey::Left)
 		dir &= ~Engine::DIRECTION::LEFT;
-		break;
-	case Windows::System::VirtualKey::Up:
+
+	if (args->VirtualKey == Windows::System::VirtualKey::Up)
 		dir &= ~Engine::DIRECTION::UP;
-		break;
-	case Windows::System::VirtualKey::Down:
+
+	if (args->VirtualKey == Windows::System::VirtualKey::Down)
 		dir &= ~Engine::DIRECTION::DOWN;
-		break;
-	case Windows::System::VirtualKey::Z:
-		touch = false;
-		break;
-	}
+
+	if (args->VirtualKey == Windows::System::VirtualKey::Z)
+		engine->setTouch(false);
+
 }
 
 void App::InitializeEGL(CoreWindow^ window)

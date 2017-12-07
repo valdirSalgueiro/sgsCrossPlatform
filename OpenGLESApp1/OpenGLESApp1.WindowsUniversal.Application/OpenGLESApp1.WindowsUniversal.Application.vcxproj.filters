@@ -116,5 +116,8 @@
     <Media Include="..\res\tiro.wav">
       <Filter>Assets\game</Filter>
     </Media>
+    <Media Include="..\res\level1.mp3">
+      <Filter>Assets\game</Filter>
+    </Media>
   </ItemGroup>
 </Project>

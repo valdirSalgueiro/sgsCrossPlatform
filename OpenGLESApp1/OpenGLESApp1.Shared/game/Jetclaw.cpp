@@ -43,6 +43,7 @@ Jetclaw::~Jetclaw(){
 }
 
 bool Jetclaw::update(float time) {
+	Enemy::update(time);
 	pos+=dir; 
 	loops++; 
 
@@ -91,19 +92,23 @@ bool Jetclaw::update(float time) {
 }
 
 
-bool Jetclaw::render(float time){
-	if(color==0){
-		glSprite(pos.x,pos.y,GL2D_CENTER|GL2D_COLOR_ADVANCED,&sprJetclaw[jetclawAnimation],false,0,1,1,83,83,83,100,43.0f/255.0f);
-
+bool Jetclaw::render(float time) {
+	if (wasHurt) {
+		glSprite(pos.x, pos.y, GL2D_CENTER | GL2D_COLOR_ADVANCED, &sprJetclaw[jetclawAnimation], false, 0, 1, 1, 0, 0, 0, 100, 1, 1, 1);
 	}
-	else if(color==1){
-		glSprite(pos.x,pos.y,GL2D_CENTER|GL2D_COLOR_ADVANCED,&sprJetclaw[jetclawAnimation],false,0,1,1,83,83,83,100,0,43.0f/255.0f);
-	}
-	else if(color==2){
-		glSprite(pos.x,pos.y,GL2D_CENTER|GL2D_COLOR_ADVANCED,&sprJetclaw[jetclawAnimation],false,0,1,1,83,83,83,100,0,0,43.0f/255.0f);
-	}
-	else{
-		glSprite(pos.x,pos.y,GL2D_CENTER,&sprJetclaw[jetclawAnimation]);
+	else {
+		if (color == 0) {
+			glSprite(pos.x, pos.y, GL2D_CENTER | GL2D_COLOR_ADVANCED, &sprJetclaw[jetclawAnimation], false, 0, 1, 1, 83, 83, 83, 100, 43.0f / 255.0f);
+		}
+		else if (color == 1) {
+			glSprite(pos.x, pos.y, GL2D_CENTER | GL2D_COLOR_ADVANCED, &sprJetclaw[jetclawAnimation], false, 0, 1, 1, 83, 83, 83, 100, 0, 43.0f / 255.0f);
+		}
+		else if (color == 2) {
+			glSprite(pos.x, pos.y, GL2D_CENTER | GL2D_COLOR_ADVANCED, &sprJetclaw[jetclawAnimation], false, 0, 1, 1, 83, 83, 83, 100, 0, 0, 43.0f / 255.0f);
+		}
+		else {
+			glSprite(pos.x, pos.y, GL2D_CENTER, &sprJetclaw[jetclawAnimation]);
+		}
 	}
 	return true;
 }
