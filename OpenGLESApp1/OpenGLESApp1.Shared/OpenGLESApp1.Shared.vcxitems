@@ -65,16 +65,16 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)game\Enemy.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\Engine.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FontAtlas.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FTBitmapChar.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FTBitmapFont.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)game\font\TreeNode.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\autofit\autofit.c">
       <ExcludedFromBuild>true</ExcludedFromBuild>

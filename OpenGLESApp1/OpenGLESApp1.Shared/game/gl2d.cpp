@@ -14,7 +14,7 @@
 int gWidth;
 int gHeight;
 
-#include "../OpenGLESApp1.iOS.Application/utilities.h"
+#include "utilities.h"
 
 //#ifdef WIN32
 #define TEXTURE_LOAD_ERROR 0

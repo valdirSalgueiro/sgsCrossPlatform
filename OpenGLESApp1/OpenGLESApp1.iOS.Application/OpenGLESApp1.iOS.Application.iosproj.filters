@@ -2,21 +2,21 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="OpenGLESApp1.iOS">
-      <UniqueIdentifier>{2ef2be05-92e2-4463-b973-43f98048ea4e}</UniqueIdentifier>
+      <UniqueIdentifier>{d1abe06d-e8b4-4b33-89f5-d187eecdacb8}</UniqueIdentifier>
     </Filter>
     <Filter Include="OpenGLESApp1.iOS\Images.xcassets">
-      <UniqueIdentifier>{3a66741d-cfff-460d-983f-450b56d3794e}</UniqueIdentifier>
+      <UniqueIdentifier>{a7758d2c-4b13-42b0-994e-16be1c5cc189}</UniqueIdentifier>
       <Extensions>OpenGLESApp1.iOS\Images.xcassets\*</Extensions>
     </Filter>
     <Filter Include="OpenGLESApp1.iOS\Images.xcassets\AppIcon.appiconset">
-      <UniqueIdentifier>{05222d41-2c0c-473a-843c-0155ae99b51e}</UniqueIdentifier>
+      <UniqueIdentifier>{a48e5629-9f38-4b59-9e54-8721c0571137}</UniqueIdentifier>
       <Extensions>OpenGLESApp1.iOS\Images.xcassets\AppIcon.appiconset\*</Extensions>
     </Filter>
     <Filter Include="OpenGLESApp1.iOS\Supporting Files">
-      <UniqueIdentifier>{b7f128be-0d44-4181-97a0-1d3445bc59d8}</UniqueIdentifier>
+      <UniqueIdentifier>{c51f537e-c27d-4e53-8b3c-4c9cd94fb2f8}</UniqueIdentifier>
     </Filter>
     <Filter Include="res">
-      <UniqueIdentifier>{6cc54cc7-a132-46fe-854c-39335de165ab}</UniqueIdentifier>
+      <UniqueIdentifier>{04f65f27-5807-4de4-9855-fe42c38cbfcf}</UniqueIdentifier>
       <Extensions>res\*</Extensions>
     </Filter>
   </ItemGroup>
@@ -123,5 +123,6 @@
     <InfoPlist Include="OpenGLESApp1.iOS\Info.plist">
       <Filter>OpenGLESApp1.iOS\Supporting Files</Filter>
     </InfoPlist>
+    <None Include="..\OpenGLESApp1.iOS.StaticLibrary\x64\Debug\OpenGLESApp1.iOS.StaticLibrary.xcodeproj" />
   </ItemGroup>
 </Project>

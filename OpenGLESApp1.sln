@@ -29,6 +29,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		OpenGLESApp1\OpenGLESApp1.Shared\OpenGLESApp1.Shared.vcxitems*{ab5d980d-1ec5-4a99-85c9-f79dd05ba0bb}*SharedItemsImports = 4
 		OpenGLESApp1\OpenGLESApp1.Shared\OpenGLESApp1.Shared.vcxitems*{b928ff02-2e96-4281-aa6e-119dc5e626fd}*SharedItemsImports = 9
+		OpenGLESApp1\OpenGLESApp1.Shared\OpenGLESApp1.Shared.vcxitems*{d1738bbf-8d59-4137-ac18-f1f2c9230c4a}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM

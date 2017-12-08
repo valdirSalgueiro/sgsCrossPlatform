@@ -87,34 +87,34 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <ReferencePath />
     <IncludePath>..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\bulletML\inc;</IncludePath>
-    <LibraryPath>..\OpenGLESApp1.Shared</LibraryPath>
+    <LibraryPath>..\..\x64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <ReferencePath />
     <IncludePath>..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\bulletML\inc;</IncludePath>
-    <LibraryPath>..\OpenGLESApp1.Shared</LibraryPath>
+    <LibraryPath>..\..\x64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <ReferencePath />
     <IncludePath>..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\bulletML\inc;</IncludePath>
-    <LibraryPath>..\OpenGLESApp1.Shared</LibraryPath>
+    <LibraryPath>..\..\x64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
     <ReferencePath />
     <IncludePath>..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\bulletML\inc;</IncludePath>
-    <LibraryPath>..\OpenGLESApp1.Shared</LibraryPath>
+    <LibraryPath>..\..\x64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <LibraryPath>..\OpenGLESApp1.Shared</LibraryPath>
+    <LibraryPath>..\..\x64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <LibraryPath>..\OpenGLESApp1.Shared</LibraryPath>
+    <LibraryPath>..\..\x64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
-    <LibraryPath>..\OpenGLESApp1.Shared</LibraryPath>
+    <LibraryPath>..\..\x64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
-    <LibraryPath>..\OpenGLESApp1.Shared</LibraryPath>
+    <LibraryPath>..\..\x64</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -126,7 +126,7 @@
       <PreprocessorDefinitions>"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
       <SymbolsHiddenByDefault>false</SymbolsHiddenByDefault>
       <GenerateDebugSymbols>true</GenerateDebugSymbols>
-      <PreprocessorDefinitions>"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USEFONT;"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -139,7 +139,7 @@
       <PreprocessorDefinitions>"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
       <SymbolsHiddenByDefault>false</SymbolsHiddenByDefault>
       <GenerateDebugSymbols>true</GenerateDebugSymbols>
-      <PreprocessorDefinitions>"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USEFONT;"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -152,7 +152,7 @@
       <PreprocessorDefinitions>"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
       <SymbolsHiddenByDefault>false</SymbolsHiddenByDefault>
       <GenerateDebugSymbols>true</GenerateDebugSymbols>
-      <PreprocessorDefinitions>"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USEFONT;"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -165,7 +165,7 @@
       <PreprocessorDefinitions>"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
       <SymbolsHiddenByDefault>false</SymbolsHiddenByDefault>
       <GenerateDebugSymbols>true</GenerateDebugSymbols>
-      <PreprocessorDefinitions>"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USEFONT;"DEBUG=1";"$(inherited)";</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -236,8 +236,13 @@
     <Content Include="res\tiro.wav" />
     <Content Include="res\warning.wav" />
     <InfoPlist Include="OpenGLESApp1.iOS\Info.plist" />
+    <None Include="..\OpenGLESApp1.iOS.StaticLibrary\x64\Debug\OpenGLESApp1.iOS.StaticLibrary.xcodeproj" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OpenGLESApp1.iOS.StaticLibrary\OpenGLESApp1.iOS.StaticLibrary.vcxproj">
+      <Project>{ab5d980d-1ec5-4a99-85c9-f79dd05ba0bb}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="System\Library\Frameworks\AudioToolbox.framework">
       <SourceTree>SDKROOT</SourceTree>

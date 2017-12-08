@@ -92,7 +92,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\bulletML\inc;..\OpenGLESApp1.Shared\game\fonts</IncludePath>
+    <IncludePath>..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\bulletML\inc;..\OpenGLESApp1.Shared\game\fonts;..\OpenGLESApp1.iOS.Application</IncludePath>
     <ReferencePath>
     </ReferencePath>
     <LibraryPath>
@@ -121,7 +121,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <ExceptionHandling>Enabled</ExceptionHandling>
       <CppLanguageStandard>c++11</CppLanguageStandard>
-      <PreprocessorDefinitions>FT2_BUILD_LIBRARY;GL_GLEXT_PROTOTYPES</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USEFONT;FT2_BUILD_LIBRARY;GL_GLEXT_PROTOTYPES</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <Lib>
