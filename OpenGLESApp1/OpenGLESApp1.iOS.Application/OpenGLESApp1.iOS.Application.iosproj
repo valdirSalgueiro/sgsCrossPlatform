@@ -37,9 +37,9 @@
   <PropertyGroup Label="Globals">
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <ProjectVersion>1.0</ProjectVersion>
+    <ProjectGuid>{a85e8e0a-4ffe-4eac-8748-45ec3060f5f0}</ProjectGuid>
     <PbxprojDirectory>OpenGLESApp1.iOS.Application.xcodeproj</PbxprojDirectory>
     <TARGET_NAME>OpenGLESApp1</TARGET_NAME>
-    <ProjectGuid>{A85E8E0A-4FFE-4EAC-8748-45EC3060F5F0}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(iOSTargetsPath)\iOS.Default.props" />
   <PropertyGroup Label="Configuration">
@@ -205,10 +205,36 @@
     <ClCompile Include="OpenGLESApp1.iOS\AppDelegate.mm" />
     <ClCompile Include="OpenGLESApp1.iOS\GameViewController.mm" />
     <ClCompile Include="OpenGLESApp1.iOS\main.mm" />
+    <ClCompile Include="utilities.mm" />
     <ClInclude Include="OpenGLESApp1.iOS\AppDelegate.h" />
     <ClInclude Include="OpenGLESApp1.iOS\GameViewController.h" />
+    <ClInclude Include="utilities.h" />
     <Content Include="OpenGLESApp1.iOS\Base.lproj\Main.storyboard" />
     <Content Include="OpenGLESApp1.iOS\Images.xcassets\AppIcon.appiconset\Contents.json" />
+    <Content Include="res\1.png" />
+    <Content Include="res\alien1.wav" />
+    <Content Include="res\aliendie1.wav" />
+    <Content Include="res\alienTiro1.wav" />
+    <Content Include="res\balloon.png" />
+    <Content Include="res\boss2_1.png" />
+    <Content Include="res\boss2_2.png" />
+    <Content Include="res\bossdie.wav" />
+    <Content Include="res\explosao.png" />
+    <Content Include="res\explosao2.png" />
+    <Content Include="res\explosion.wav" />
+    <Content Include="res\hb.png" />
+    <Content Include="res\intro.png" />
+    <Content Include="res\jetclaw.png" />
+    <Content Include="res\jetclawExplosion.png" />
+    <Content Include="res\level1.mp3" />
+    <Content Include="res\level1.png" />
+    <Content Include="res\max.png" />
+    <Content Include="res\mecha.png" />
+    <Content Include="res\ship.wav" />
+    <Content Include="res\tammy.png" />
+    <Content Include="res\tiro.png" />
+    <Content Include="res\tiro.wav" />
+    <Content Include="res\warning.wav" />
     <InfoPlist Include="OpenGLESApp1.iOS\Info.plist" />
   </ItemGroup>
   <ItemGroup />

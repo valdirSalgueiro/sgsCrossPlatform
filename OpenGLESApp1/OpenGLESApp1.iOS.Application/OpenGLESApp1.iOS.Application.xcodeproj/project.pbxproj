@@ -1,256 +1,158 @@
+// !$*UTF8*$!
 {
 	archiveVersion = 1;
-	objectVersion = 46;
 	classes = {
 	};
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A501B381FDA3F570055B682 = {
-			isa = PBXBuildFile;
-			fileRef = 1A501B371FDA3F570055B682;
-		};
-		1A501B3A1FDA3FD50055B682 = {
-			isa = PBXBuildFile;
-			fileRef = 1A501B391FDA3FD50055B682;
-		};
-		9DC111901B2B501900AAD119 = {
-			isa = PBXBuildFile;
-			fileRef = 9DC1118F1B2B501900AAD119;
-		};
-		9DC111921B2B501F00AAD119 = {
-			isa = PBXBuildFile;
-			fileRef = 9DC111911B2B501F00AAD119;
-		};
-		9DC111941B2B502300AAD119 = {
-			isa = PBXBuildFile;
-			fileRef = 9DC111931B2B502300AAD119;
-		};
-		D732ADFC1AD8974300D69854 = {
-			isa = PBXBuildFile;
-			fileRef = D732ADFB1AD8974300D69854;
-		};
-		D732AE0B1AD8974300D69854 = {
-			isa = PBXBuildFile;
-			fileRef = D732AE0A1AD8974300D69854;
-		};
-		D732AE2A1AD89BDB00D69854 = {
-			isa = PBXBuildFile;
-			fileRef = D732AE241AD89BDB00D69854;
-		};
-		D732AE2B1AD89BDB00D69854 = {
-			isa = PBXBuildFile;
-			fileRef = D732AE251AD89BDB00D69854;
-		};
-		D732AE2C1AD89BDB00D69854 = {
-			isa = PBXBuildFile;
-			fileRef = D732AE271AD89BDB00D69854;
-		};
+		1A501B381FDA3F570055B682 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A501B371FDA3F570055B682 /* AudioToolbox.framework */; };
+		1A501B3A1FDA3FD50055B682 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A501B391FDA3FD50055B682 /* AVFoundation.framework */; };
+		1A8A6CFC1FDADC2E00BA60D4 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 1A8A6CFB1FDADC2D00BA60D4 /* res */; };
+		9DC111901B2B501900AAD119 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC1118F1B2B501900AAD119 /* UIKit.framework */; };
+		9DC111921B2B501F00AAD119 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC111911B2B501F00AAD119 /* GLKit.framework */; };
+		9DC111941B2B502300AAD119 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC111931B2B502300AAD119 /* OpenGLES.framework */; };
+		9dd32958c3bd434999d90aba /* utilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = b8e19063740144f6bd461774 /* utilities.mm */; };
+		D732ADFC1AD8974300D69854 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = D732ADFB1AD8974300D69854 /* main.mm */; };
+		D732AE0B1AD8974300D69854 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D732AE0A1AD8974300D69854 /* Images.xcassets */; };
+		D732AE2A1AD89BDB00D69854 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = D732AE241AD89BDB00D69854 /* AppDelegate.mm */; };
+		D732AE2B1AD89BDB00D69854 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D732AE251AD89BDB00D69854 /* Base */; };
+		D732AE2C1AD89BDB00D69854 /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D732AE271AD89BDB00D69854 /* GameViewController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A501B371FDA3F570055B682 = {
-			isa = PBXFileReference;
-			lastKnownFileType = wrapper.framework;
-			name = AudioToolbox.framework;
-			path = System/Library/Frameworks/AudioToolbox.framework;
-			sourceTree = SDKROOT;
-		};
-		1A501B391FDA3FD50055B682 = {
-			isa = PBXFileReference;
-			lastKnownFileType = wrapper.framework;
-			name = AVFoundation.framework;
-			path = System/Library/Frameworks/AVFoundation.framework;
-			sourceTree = SDKROOT;
-		};
-		9DC1118F1B2B501900AAD119 = {
-			isa = PBXFileReference;
-			lastKnownFileType = wrapper.framework;
-			name = UIKit.framework;
-			path = System/Library/Frameworks/UIKit.framework;
-			sourceTree = SDKROOT;
-		};
-		9DC111911B2B501F00AAD119 = {
-			isa = PBXFileReference;
-			lastKnownFileType = wrapper.framework;
-			name = GLKit.framework;
-			path = System/Library/Frameworks/GLKit.framework;
-			sourceTree = SDKROOT;
-		};
-		9DC111931B2B502300AAD119 = {
-			isa = PBXFileReference;
-			lastKnownFileType = wrapper.framework;
-			name = OpenGLES.framework;
-			path = System/Library/Frameworks/OpenGLES.framework;
-			sourceTree = SDKROOT;
-		};
-		D732ADF61AD8974300D69854 = {
-			isa = PBXFileReference;
-			explicitFileType = wrapper.application;
-			path = OpenGLESApp1.app;
-			sourceTree = BUILT_PRODUCTS_DIR;
-			includeInIndex = 0;
-		};
-		D732ADFB1AD8974300D69854 = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.objcpp;
-			path = main.mm;
-			sourceTree = "<group>";
-		};
-		D732AE0A1AD8974300D69854 = {
-			isa = PBXFileReference;
-			lastKnownFileType = folder.assetcatalog;
-			path = Images.xcassets;
-			sourceTree = "<group>";
-		};
-		D732AE231AD89BDB00D69854 = {
-			isa = PBXFileReference;
-			fileEncoding = 4;
-			lastKnownFileType = sourcecode.c.h;
-			path = AppDelegate.h;
-			sourceTree = "<group>";
-		};
-		D732AE241AD89BDB00D69854 = {
-			isa = PBXFileReference;
-			fileEncoding = 4;
-			lastKnownFileType = sourcecode.cpp.objcpp;
-			path = AppDelegate.mm;
-			sourceTree = "<group>";
-		};
-		D732AE251AD89BDB00D69854 = {
-			isa = PBXFileReference;
-			lastKnownFileType = file.storyboard;
-			name = Base;
-			path = Base.lproj/Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D732AE261AD89BDB00D69854 = {
-			isa = PBXFileReference;
-			fileEncoding = 4;
-			lastKnownFileType = sourcecode.c.h;
-			path = GameViewController.h;
-			sourceTree = "<group>";
-		};
-		D732AE271AD89BDB00D69854 = {
-			isa = PBXFileReference;
-			fileEncoding = 4;
-			lastKnownFileType = sourcecode.cpp.objcpp;
-			path = GameViewController.mm;
-			sourceTree = "<group>";
-		};
-		D732AE291AD89BDB00D69854 = {
-			isa = PBXFileReference;
-			fileEncoding = 4;
-			lastKnownFileType = text.xcconfig;
-			path = ../vcreference.xcconfig;
-			sourceTree = "<group>";
-		};
+		1A501B371FDA3F570055B682 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1A501B391FDA3FD50055B682 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1A8A6CFB1FDADC2D00BA60D4 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
+		42abb8d3e7a44665b003a81b /* utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utilities.h; sourceTree = SOURCE_ROOT; };
+		9DC1118F1B2B501900AAD119 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9DC111911B2B501F00AAD119 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		9DC111931B2B502300AAD119 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D732ADF61AD8974300D69854 /* OpenGLESApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLESApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D732ADFB1AD8974300D69854 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		D732AE0A1AD8974300D69854 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D732AE231AD89BDB00D69854 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D732AE241AD89BDB00D69854 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		D732AE251AD89BDB00D69854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D732AE261AD89BDB00D69854 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D732AE271AD89BDB00D69854 /* GameViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameViewController.mm; sourceTree = "<group>"; };
+		D732AE291AD89BDB00D69854 /* ../vcreference.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ../vcreference.xcconfig; sourceTree = "<group>"; };
+		b8e19063740144f6bd461774 /* utilities.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = utilities.mm; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D732ADF31AD8974300D69854 = {
+		D732ADF31AD8974300D69854 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			files = (
-				1A501B3A1FDA3FD50055B682,
-				1A501B381FDA3F570055B682,
-				9DC111941B2B502300AAD119,
-				9DC111921B2B501F00AAD119,
-				9DC111901B2B501900AAD119,
-			);
 			buildActionMask = 2147483647;
+			files = (
+				1A501B3A1FDA3FD50055B682 /* AVFoundation.framework in Frameworks */,
+				1A501B381FDA3F570055B682 /* AudioToolbox.framework in Frameworks */,
+				9DC111941B2B502300AAD119 /* OpenGLES.framework in Frameworks */,
+				9DC111921B2B501F00AAD119 /* GLKit.framework in Frameworks */,
+				9DC111901B2B501900AAD119 /* UIKit.framework in Frameworks */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A501B361FDA3F570055B682 = {
+		1A501B361FDA3F570055B682 /* Frameworks */ = {
 			isa = PBXGroup;
+			children = (
+				1A501B391FDA3FD50055B682 /* AVFoundation.framework */,
+				1A501B371FDA3F570055B682 /* AudioToolbox.framework */,
+			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		1a0337ef53644fd698becf45 /* NewFilter1 */ = {
+			isa = PBXGroup;
 			children = (
-				1A501B391FDA3FD50055B682,
-				1A501B371FDA3F570055B682,
 			);
+			name = NewFilter1;
+			sourceTree = "<group>";
 		};
 		D732ADED1AD8974300D69854 = {
 			isa = PBXGroup;
-			sourceTree = "<group>";
 			children = (
-				9DC111931B2B502300AAD119,
-				9DC111911B2B501F00AAD119,
-				9DC1118F1B2B501900AAD119,
-				D732ADF81AD8974300D69854,
-				D732ADF71AD8974300D69854,
-				1A501B361FDA3F570055B682,
+				1A8A6CFB1FDADC2D00BA60D4 /* res */,
+				9DC111931B2B502300AAD119 /* OpenGLES.framework */,
+				9DC111911B2B501F00AAD119 /* GLKit.framework */,
+				9DC1118F1B2B501900AAD119 /* UIKit.framework */,
+				D732ADF81AD8974300D69854 /* OpenGLESApp1.iOS */,
+				D732ADF71AD8974300D69854 /* Products */,
+				1A501B361FDA3F570055B682 /* Frameworks */,
+				c997ec1a294b4f7ba7a09d44 /* NewFilter1 */,
+				1a0337ef53644fd698becf45 /* NewFilter1 */,
 			);
+			sourceTree = "<group>";
 		};
-		D732ADF71AD8974300D69854 = {
+		D732ADF71AD8974300D69854 /* Products */ = {
 			isa = PBXGroup;
+			children = (
+				D732ADF61AD8974300D69854 /* OpenGLESApp1.app */,
+			);
 			name = Products;
 			sourceTree = "<group>";
-			children = (
-				D732ADF61AD8974300D69854,
-			);
 		};
-		D732ADF81AD8974300D69854 = {
+		D732ADF81AD8974300D69854 /* OpenGLESApp1.iOS */ = {
 			isa = PBXGroup;
+			children = (
+				D732AE231AD89BDB00D69854 /* AppDelegate.h */,
+				D732AE241AD89BDB00D69854 /* AppDelegate.mm */,
+				D732AE251AD89BDB00D69854 /* Base */,
+				D732AE261AD89BDB00D69854 /* GameViewController.h */,
+				D732AE271AD89BDB00D69854 /* GameViewController.mm */,
+				D732AE291AD89BDB00D69854 /* ../vcreference.xcconfig */,
+				D732AE0A1AD8974300D69854 /* Images.xcassets */,
+				D732ADF91AD8974300D69854 /* Supporting Files */,
+				42abb8d3e7a44665b003a81b /* utilities.h */,
+				b8e19063740144f6bd461774 /* utilities.mm */,
+			);
 			path = OpenGLESApp1.iOS;
 			sourceTree = "<group>";
-			children = (
-				D732AE231AD89BDB00D69854,
-				D732AE241AD89BDB00D69854,
-				D732AE251AD89BDB00D69854,
-				D732AE261AD89BDB00D69854,
-				D732AE271AD89BDB00D69854,
-				D732AE291AD89BDB00D69854,
-				D732AE0A1AD8974300D69854,
-				D732ADF91AD8974300D69854,
-			);
 		};
-		D732ADF91AD8974300D69854 = {
+		D732ADF91AD8974300D69854 /* Supporting Files */ = {
 			isa = PBXGroup;
+			children = (
+				D732ADFB1AD8974300D69854 /* main.mm */,
+			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		c997ec1a294b4f7ba7a09d44 /* NewFilter1 */ = {
+			isa = PBXGroup;
 			children = (
-				D732ADFB1AD8974300D69854,
 			);
+			name = NewFilter1;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D732ADF51AD8974300D69854 = {
+		D732ADF51AD8974300D69854 /* OpenGLESApp1 */ = {
 			isa = PBXNativeTarget;
+			buildConfigurationList = D732AE1D1AD8974300D69854 /* Build configuration list for PBXNativeTarget "OpenGLESApp1" */;
 			buildPhases = (
-				D732ADF21AD8974300D69854,
-				D732ADF31AD8974300D69854,
-				D732ADF41AD8974300D69854,
+				D732ADF21AD8974300D69854 /* Sources */,
+				D732ADF31AD8974300D69854 /* Frameworks */,
+				D732ADF41AD8974300D69854 /* Resources */,
+			);
+			buildRules = (
 			);
 			dependencies = (
 			);
 			name = OpenGLESApp1;
 			productName = OpenGLESApp1;
-			productReference = D732ADF61AD8974300D69854;
+			productReference = D732ADF61AD8974300D69854 /* OpenGLESApp1.app */;
 			productType = "com.apple.product-type.application";
-			buildConfigurationList = D732AE1D1AD8974300D69854;
-			buildRules = (
-			);
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D732ADEE1AD8974300D69854 = {
+		D732ADEE1AD8974300D69854 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = D732ADF11AD8974300D69854;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = D732ADED1AD8974300D69854;
-			productRefGroup = D732ADF71AD8974300D69854;
-			projectDirPath = "";
 			attributes = {
 				LastUpgradeCheck = 0610;
 				TargetAttributes = {
@@ -267,41 +169,55 @@
 					};
 				};
 			};
+			buildConfigurationList = D732ADF11AD8974300D69854 /* Build configuration list for PBXProject "OpenGLESApp1.iOS.Application" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D732ADED1AD8974300D69854;
+			productRefGroup = D732ADF71AD8974300D69854 /* Products */;
+			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D732ADF51AD8974300D69854,
+				D732ADF51AD8974300D69854 /* OpenGLESApp1 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D732ADF41AD8974300D69854 = {
+		D732ADF41AD8974300D69854 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			files = (
-				D732AE2B1AD89BDB00D69854,
-				D732AE0B1AD8974300D69854,
-			);
 			buildActionMask = 2147483647;
+			files = (
+				1A8A6CFC1FDADC2E00BA60D4 /* res in Resources */,
+				D732AE2B1AD89BDB00D69854 /* Base in Resources */,
+				D732AE0B1AD8974300D69854 /* Images.xcassets in Resources */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D732ADF21AD8974300D69854 = {
+		D732ADF21AD8974300D69854 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			files = (
-				D732AE2A1AD89BDB00D69854,
-				D732AE2C1AD89BDB00D69854,
-				D732ADFC1AD8974300D69854,
-			);
 			buildActionMask = 2147483647;
+			files = (
+				D732AE2A1AD89BDB00D69854 /* AppDelegate.mm in Sources */,
+				D732AE2C1AD89BDB00D69854 /* GameViewController.mm in Sources */,
+				D732ADFC1AD8974300D69854 /* main.mm in Sources */,
+				9dd32958c3bd434999d90aba /* utilities.mm in Sources */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		D732AE1B1AD8974300D69854 = {
+		D732AE1B1AD8974300D69854 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D732AE291AD89BDB00D69854 /* ../vcreference.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -341,10 +257,10 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
-			baseConfigurationReference = D732AE291AD89BDB00D69854;
 		};
-		D732AE1C1AD8974300D69854 = {
+		D732AE1C1AD8974300D69854 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D732AE291AD89BDB00D69854 /* ../vcreference.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -378,9 +294,8 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-			baseConfigurationReference = D732AE291AD89BDB00D69854;
 		};
-		D732AE1E1AD8974300D69854 = {
+		D732AE1E1AD8974300D69854 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -411,7 +326,7 @@
 			};
 			name = Debug;
 		};
-		D732AE1F1AD8974300D69854 = {
+		D732AE1F1AD8974300D69854 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -425,25 +340,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D732ADF11AD8974300D69854 = {
+		D732ADF11AD8974300D69854 /* Build configuration list for PBXProject "OpenGLESApp1.iOS.Application" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D732AE1B1AD8974300D69854,
-				D732AE1C1AD8974300D69854,
+				D732AE1B1AD8974300D69854 /* Debug */,
+				D732AE1C1AD8974300D69854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D732AE1D1AD8974300D69854 = {
+		D732AE1D1AD8974300D69854 /* Build configuration list for PBXNativeTarget "OpenGLESApp1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D732AE1E1AD8974300D69854,
-				D732AE1F1AD8974300D69854,
+				D732AE1E1AD8974300D69854 /* Debug */,
+				D732AE1F1AD8974300D69854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D732ADEE1AD8974300D69854;
+	rootObject = D732ADEE1AD8974300D69854 /* Project object */;
 }

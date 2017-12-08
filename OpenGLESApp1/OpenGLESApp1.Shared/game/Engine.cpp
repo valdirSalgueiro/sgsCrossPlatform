@@ -879,7 +879,7 @@ void Engine::render(float time) {
 		}
 #endif
 
-#ifndef WIN32
+#ifdef __APPLE__ || __ANDROID_API__
 		glSprite(controlBasePos.x, controlBasePos.y, GL2D_NO_SCALE | GL2D_CENTER, controlBase, false, 0, 1, 1, 1.0f, 1.0f, 1.0f, 0.5f);
 		glSprite(controlKnobPos.x, controlKnobPos.y, GL2D_NO_SCALE | GL2D_CENTER, controlKnob, false, 0, 1, 1, 1.0f, 1.0f, 1.0f, 0.5f);
 #endif

@@ -14,6 +14,8 @@
 int gWidth;
 int gHeight;
 
+#include "../OpenGLESApp1.iOS.Application/utilities.h"
+
 //#ifdef WIN32
 #define TEXTURE_LOAD_ERROR 0
 GLuint loadTexture(const std::string filename, int &width, int &height)
@@ -22,7 +24,12 @@ GLuint loadTexture(const std::string filename, int &width, int &height)
 	png_byte header[8];
 
 	//open file as binary
-	FILE *fp = fopen(filename.c_str(), "rb");
+	FILE *fp;
+#ifdef __APPLE__
+	fp = iosfopen(filename.c_str(), "rb");
+#else
+	fp = fopen(filename.c_str(), "rb");
+#endif
 	if (!fp) {
 		return TEXTURE_LOAD_ERROR;
 	}

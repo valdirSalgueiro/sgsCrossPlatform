@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <payload>
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.StaticLibrary\x64\Debug\OpenGLESApp1.iOS.StaticLibrary.xcodeproj\project.pbxproj" changed="2017-12-08T01:13:06.810613-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.StaticLibrary\x64\Debug\OpenGLESApp1.iOS.StaticLibrary.xcodeproj\project.pbxproj" changed="2017-12-08T13:21:13.276963-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\MathHelper.h" changed="2017-12-06T09:15:40.930068-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\pch.h" changed="2017-12-06T09:15:42.1952483-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\Balloon.cpp" changed="2017-12-06T20:50:15.3721489-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\Boss2.cpp" changed="2017-12-06T20:50:09.2603814-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\Easing.cpp" changed="2017-12-06T09:15:40.9390922-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\Enemy.cpp" changed="2017-12-06T20:55:09.5237467-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\Engine.cpp" changed="2017-12-07T23:17:20.3207997-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\gl2d.cpp" changed="2017-12-06T09:15:42.1441118-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\Engine.cpp" changed="2017-12-08T13:16:38.0722169-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\gl2d.cpp" changed="2017-12-08T13:17:56.1895785-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\GLES2SpriteBatch.cpp" changed="2017-12-07T08:49:40.0777254-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\Hellburguer.cpp" changed="2017-12-06T20:51:05.6089284-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.Shared\game\Intro.cpp" changed="2017-12-07T23:19:26.38809-02:00" />
