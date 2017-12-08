@@ -170,7 +170,7 @@
       <CompileAsWinRT>false</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\bulletML\inc;$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\fonts;..\OpenGLESApp1.Shared\game\bulletML\inc;$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>FT2_BUILD_LIBRARY;PNG_BUILD_DLL;BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE;_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>

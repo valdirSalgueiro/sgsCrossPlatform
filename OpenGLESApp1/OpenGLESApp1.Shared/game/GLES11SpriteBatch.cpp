@@ -4,8 +4,6 @@
 #include <string.h>
 #include "GLES11SpriteBatch.h"
 
-//#include <android/log.h>
-
 int flushSprites_=0;
 
 GLES11SpriteBatch::GLES11SpriteBatch( int tw, int th ) : SpriteBatch(tw,th)

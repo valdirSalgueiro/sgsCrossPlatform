@@ -4,7 +4,14 @@
 #include <wrl.h>
 
 // OpenGL ES includes
+#ifdef __APPLE__
+#include <unistd.h>
+#include <sys/resource.h>
+
+#include <OpenGLES/ES2/gl.h>
+#else // __ANDROID__ or _WIN32
 #include <GLES2/gl2.h>
+#endif
 #include <GLES2/gl2ext.h>
 
 // EGL includes

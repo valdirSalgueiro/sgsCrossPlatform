@@ -1,8 +1,5 @@
 #include "VideoGLSurfaceView.h"
 
-#ifndef WIN32
-#include <android\log.h>
-#endif
 #include "game\gl2d.h"
 
 

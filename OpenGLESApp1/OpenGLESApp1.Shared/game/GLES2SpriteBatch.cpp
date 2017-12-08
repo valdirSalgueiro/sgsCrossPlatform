@@ -2,7 +2,6 @@
 #include <math.h>
 #include <memory.h>
 #include <stdio.h>
-#include <GLES2/gl2.h>
 #include "GLES2SpriteBatch.h"
 
 #include <stdio.h>

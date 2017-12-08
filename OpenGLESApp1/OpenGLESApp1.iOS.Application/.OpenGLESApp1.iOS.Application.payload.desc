@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<payload>
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS.Application.xcodeproj\project.pbxproj" changed="2017-12-08T01:40:21.4659077-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\\vcreference.xcconfig" changed="2017-12-08T01:40:21.9447673-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\AppDelegate.mm" changed="2017-12-04T21:22:25.221285-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\GameViewController.mm" changed="2017-12-07T21:45:23.034694-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\main.mm" changed="2017-12-04T21:22:25.221285-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\AppDelegate.h" changed="2017-12-04T21:22:25.221285-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\GameViewController.h" changed="2017-12-04T21:22:25.221285-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\Info.plist" changed="2017-12-04T21:22:25.221285-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\Base.lproj\Main.storyboard" changed="2017-12-04T21:22:25.221285-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\Images.xcassets\AppIcon.appiconset\Contents.json" changed="2017-12-04T21:22:25.221285-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\vcreference.xcconfig" changed="2017-12-07T23:15:09.0633372-02:00" />
+</payload>

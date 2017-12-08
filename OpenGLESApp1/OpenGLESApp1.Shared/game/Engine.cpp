@@ -10,7 +10,10 @@
 
 #include "sound.h"
 
+#ifdef USEFONT
 #include "font/FTBitmapChar.h"
+#endif
+
 
 #include "Jetclaw.h"
 #include "Hellburguer.h"
@@ -186,14 +189,12 @@ int enemieIter;
 int bossMode;
 Tween myTween;
 
-#ifndef WIN32
-#include "android\log.h"
-#endif	
+#include "ahb.h"
+#include "digit.h"
 
-#include "fonts\ahb.h"
-#include "fonts\digit.h"
-
+#ifdef USEFONT
 FontAtlas* m_pFontAtlas;
+#endif
 int widths[10];
 
 
@@ -218,10 +219,6 @@ bool shakeScreen = false;
 float shakeAmount = 0.1;
 
 void Engine::init(int width_, int height_) {
-#ifndef WIN32
-	__android_log_print(ANDROID_LOG_INFO, "SGS", "Engine INIT");
-#endif	
-
 	width = width_;
 	height = height_;
 	startBatch(width, height);
@@ -229,6 +226,7 @@ void Engine::init(int width_, int height_) {
 
 	//deinit();
 
+#ifdef USEFONT
 	m_pFontAtlas = new FontAtlas();
 	m_pFontAtlas->AddFont(ahb_ttf, ahb_ttf_size, 44, szLetters);
 	m_pFontAtlas->AddFont(ahb_ttf, ahb_ttf_size, 36, szLetters);
@@ -243,6 +241,7 @@ void Engine::init(int width_, int height_) {
 	widths[4] = m_pFontAtlas->GetFont(AHB_20)->GetWidth("I'LL SEE YOU BEHIND ENEMY LINES!");
 	widths[5] = m_pFontAtlas->GetFont(AHB_20)->GetWidth("GOOD LUCK!");
 	widths[6] = m_pFontAtlas->GetFont(AHB_44)->GetWidth("MISSION START!");
+#endif
 
 	reset();
 
@@ -365,11 +364,10 @@ void Engine::reset() {
 }
 
 void Engine::deinit() {
-#ifndef WIN32
-	__android_log_print(ANDROID_LOG_INFO, "SGS", "Engine DESTROY");
-#endif	
 	//destroy_();
+#ifdef USEFONT
 	delete m_pFontAtlas;
+#endif
 	delete player;
 
 
@@ -818,6 +816,7 @@ void Engine::render(float time) {
 		st << score;
 		std::string scoreStr = st.str();
 
+#ifdef USEFONT
 		m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(100, 25, "SCORE", 0xffffff, 0x000000);
 		m_pFontAtlas->GetFont(DIGIT_X)->DrawStringShadow(220, -5, scoreStr, 0x0000ff, 0xffffff);
 
@@ -878,6 +877,7 @@ void Engine::render(float time) {
 			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(420 - widths[4] / 2, 420, "I'LL SEE YOU BEHIND ENEMY LINES!", 0xffffff, 0x000000);
 			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(420 - widths[5] / 2, 445, "GOOD LUCK!", 0xffff00, 0x000000);
 		}
+#endif
 
 #ifndef WIN32
 		glSprite(controlBasePos.x, controlBasePos.y, GL2D_NO_SCALE | GL2D_CENTER, controlBase, false, 0, 1, 1, 1.0f, 1.0f, 1.0f, 0.5f);

@@ -5,10 +5,12 @@
 
 #define DEG2RAD(LOL) (LOL*3.1415/180.0)
 
+#ifdef USEFONT
 #include "font/PreCompile.h"
 #include "font/FontAtlas.h" 
 #include "font/FTBitmapFont.h"
 #include "font/FTBitmapChar.h"
+#endif
  
 const unsigned int intro_texcoords[] = {
 0,0,800,480, //0,intro.png
@@ -183,14 +185,17 @@ const unsigned int intro_sequence[]={
 glImage spr[151];
 extern Tween myTween;
 Tween myTween2;
-
+#ifdef USEFONT
 extern FontAtlas* m_pFontAtlas;
+#endif
 int loops=0;
 
 int width1_;
 
 Intro::Intro(){
+#ifdef USEFONT
 	width1_=(m_pFontAtlas->GetFont(AHB_36)->GetWidth("TOUCH TO START"));
+#endif
 	numframes=sizeof(intro_sequence)/sizeof(const unsigned int);
 
 	glLoadSpriteset("intro.png",spr,2048,2048,151,intro_texcoords,0);
@@ -266,7 +271,9 @@ bool Intro::render(float time){
 	if(loops%60<20){
 		
 	}else{
+#ifdef USEFONT
 		m_pFontAtlas->GetFont(AHB_36)->DrawStringShadow(400-width1_/2,400,"TOUCH TO START",0xffffff,0x0000CC);
+#endif
 	}
 
 	return true;

@@ -4,7 +4,6 @@
 #include <math.h>
 #include <stdlib.h>
 #include "Vector2D.h"
-//#include <android/log.h>
 
 
 enum DIRECTION{

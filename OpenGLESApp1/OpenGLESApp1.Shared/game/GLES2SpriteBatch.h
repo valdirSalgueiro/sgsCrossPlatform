@@ -2,7 +2,14 @@
 #define __GLES2SPRITEBATCH__
 
 #include "SpriteBatch.h"
+#ifdef __APPLE__
+#include <unistd.h>
+#include <sys/resource.h>
+
+#include <OpenGLES/ES2/gl.h>
+#else // __ANDROID__ or _WIN32
 #include <GLES2/gl2.h>
+#endif
 
 #define COSINE_TABLE_SIZE 1024
 #define COSINE_TABLE_AND 1023

@@ -16,7 +16,14 @@
 #include <assert.h>
 #include <map>
 #include <vector>
+#ifdef __APPLE__
+#include <unistd.h>
+#include <sys/resource.h>
+
+#include <OpenGLES/ES2/gl.h>
+#else // __ANDROID__ or _WIN32
 #include <GLES2/gl2.h>
+#endif
 //#include <boost/unordered_map.hpp>  
 //#define fmap boost::unordered_map
 #include <unordered_map>

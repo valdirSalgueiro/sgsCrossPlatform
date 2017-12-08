@@ -65,7 +65,7 @@
       <PrecompiledHeaderFile>..\OpenGLESApp1.Shared\pch.h</PrecompiledHeaderFile>
       <ExceptionHandling>Enabled</ExceptionHandling>
       <CppLanguageStandard>c++11</CppLanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\bulletML\inc;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);..\OpenGLESApp1.Shared\game\sound;..\OpenGLESApp1.Shared\game\zlib;..\OpenGLESApp1.Shared\game\bulletML;..\OpenGLESApp1.Shared\game\freetype;..\OpenGLESApp1.Shared\game\font;..\OpenGLESApp1.Shared\game\png;..\OpenGLESApp1.Shared\game;..\OpenGLESApp1.Shared\game\bulletML\inc;..\OpenGLESApp1.Shared\game\fonts</AdditionalIncludeDirectories>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PreprocessorDefinitions>FT2_BUILD_LIBRARY</PreprocessorDefinitions>
