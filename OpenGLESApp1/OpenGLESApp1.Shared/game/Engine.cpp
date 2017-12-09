@@ -514,7 +514,7 @@ void Engine::update(float time) {
 					}
 				}
 			}
-			if (enemieKills >= 200) {
+			if (enemieKills >= 200/4) {
 				if (!bossMode) {
 					bossTime = frames;
 					boss++;
@@ -538,16 +538,16 @@ void Engine::update(float time) {
 					}
 				}
 			}
-			else if (enemieKills > 150) {
+			else if (enemieKills > 150/4) {
 				powerUp = 0;
 			}
-			else if (enemieKills > 100) {
+			else if (enemieKills > 100/4) {
 				if (powerUp == 1)
 					powerUpTime = frames;
 				powerUp = 2;
 
 			}
-			else if (enemieKills > 50) {
+			else if (enemieKills > 50/4) {
 				if (powerUp == 0)
 					powerUpTime = frames;
 				powerUp = 1;
