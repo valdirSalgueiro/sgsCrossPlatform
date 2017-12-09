@@ -231,7 +231,7 @@ void App::OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::Ke
 	if (args->VirtualKey == Windows::System::VirtualKey::Down)
 		dir |= Engine::DIRECTION::DOWN;
 
-	if (args->VirtualKey == Windows::System::VirtualKey::Z)
+	if (args->VirtualKey == Windows::System::VirtualKey::Space)
 		engine->setTouch(true);
 
 
@@ -251,7 +251,7 @@ void App::OnKeyUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyE
 	if (args->VirtualKey == Windows::System::VirtualKey::Down)
 		dir &= ~Engine::DIRECTION::DOWN;
 
-	if (args->VirtualKey == Windows::System::VirtualKey::Z)
+	if (args->VirtualKey == Windows::System::VirtualKey::Space)
 		engine->setTouch(false);
 
 }
