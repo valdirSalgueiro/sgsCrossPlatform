@@ -250,29 +250,32 @@ bool Intro::update(float time) {
 bool Intro::render(float time){
 	
 	//printf("%f\n",myTween.num);
-	glSprite(0,0,GL2D_NO_SCALE,&spr[0],false,0,1,1,1,1,1,myTween.num);	
-	glSprite(0,0,GL2D_NO_SCALE,&spr[0],false,0,1,1,1,1,1,0.5);	
+	glSprite(0,0, GL2D_SCALE_TO_SCREEN,&spr[0],false,0,1,1,1,1,1,myTween.num);
+	glSprite(0,0, GL2D_SCALE_TO_SCREEN,&spr[0],false,0,1,1,1,1,1,0.5);
 	
 	
-	glSprite(400,200,GL2D_CENTER|GL2D_NO_SCALE|GL2D_COLOR_ADVANCED,&spr[1],false,0,1.2,1.2,-24,-100,100,100,-255.0f/255.0f,-255.0f/255.0f,-84.0f/255.0f,0.0f/255.0f);
+	glSprite(800,400,GL2D_CENTER | GL2D_COLOR_ADVANCED,&spr[1],false,0,2.4,2.4,-24,-100,100,100,-255.0f/255.0f,-255.0f/255.0f,-84.0f/255.0f,0.0f/255.0f);
 	
-	glSprite(370,380,GL2D_CENTER|GL2D_NO_SCALE,&spr[149]);//text
-	glSprite(400,380,GL2D_CENTER|GL2D_NO_SCALE,&spr[150]);
+	glSprite(800,760,GL2D_CENTER| GL2D_NO_SCALE,&spr[149]);//text
+	glSprite(830,760,GL2D_CENTER| GL2D_NO_SCALE,&spr[150]);
 
 	std::vector<Animation*>::iterator iter = animations.begin();
 	while (iter != animations.end())
 	{
-		glSprite(400,200,GL2D_CENTER|GL2D_NO_SCALE|GL2D_COLOR_ADVANCED,&spr[intro_sequence[(*iter)->currentFrame]],false,0,1,1,100,100,100,100,41.0f/255.0f,-5.0f/255.0f,-255.0f/255.0f,0.0f/255.0f);
+		glSprite(800,400,GL2D_CENTER| GL2D_COLOR_ADVANCED,&spr[intro_sequence[(*iter)->currentFrame]],false,0,2,2,100,100,100,100,41.0f/255.0f,-5.0f/255.0f,-255.0f/255.0f,0.0f/255.0f);
 		iter++;
 	}
 	
-	glSprite(400,300,GL2D_CENTER|GL2D_NO_SCALE,&spr[2],false,0,myTween.num,myTween.num);//flare
+	glSprite(800,600,GL2D_CENTER ,&spr[2],false,0,myTween.num*2,myTween.num*2);//flare
 
 	if(loops%60<20){
 		
 	}else{
 #ifdef USEFONT
-		m_pFontAtlas->GetFont(AHB_36)->DrawStringShadow(400-width1_/2,400,"TOUCH TO START",0xffffff,0x0000CC);
+#ifdef __ANDROID_API__ || __APPLE__
+		m_pFontAtlas->GetFont(AHB_36)->DrawStringShadow(800 - width1_ / 2, 800, "TOUCH TO START", 0xffffff, 0x0000CC);
+#endif // __ANDROID_API__ || __APPLE__
+		m_pFontAtlas->GetFont(AHB_36)->DrawStringShadow(800-width1_/2,800,"PRESS FIRE TO START",0xffffff,0x0000CC);
 #endif
 	}
 
