@@ -131,10 +131,10 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="..\res\SGSMovie.avi" />
-    <None Include="D:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Universal Windows Platform\api\lowlevel\lib\fmod_X64.dll">
+    <None Include="..\fmod_X64.dll">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
     </None>
+    <None Include="..\res\SGSMovie.avi" />
     <None Include="OpenGLESApp1_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

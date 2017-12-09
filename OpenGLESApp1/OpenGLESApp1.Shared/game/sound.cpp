@@ -26,7 +26,6 @@ typedef struct
 
 /* Globals */
 char *fmod_source_file = 0;
-FMOD::System *fmod_system;
 FMOD::System *fmod_sound_system;
 unsigned int fmod_version;
 FMOD::Sound *fmod_music_sound;
@@ -102,23 +101,9 @@ char *wcsound_get_file()
 /* Start */
 int wcsound_start()
 {
-	/* Create the system */
-	if (FMOD::System_Create(&fmod_system) != FMOD_OK)
-	{
-		puts("Could not create FMOD system");
-		return 0;
-	}
-
 	if (FMOD::System_Create(&fmod_sound_system) != FMOD_OK)
 	{
 		puts("Could not create FMOD sound system");
-		return 0;
-	}
-
-	/* Initialize system */
-	if (fmod_system->init(4, FMOD_INIT_NORMAL, 0) != FMOD_OK)
-	{
-		puts("Could not initialize FMOD system");
 		return 0;
 	}
 
@@ -139,7 +124,6 @@ void wcsound_end()
 	/* Release fmod */
 	free(fmod_source_file);
 	fmod_sound_system->release();
-	fmod_system->release();
 }
 
 /* Adjusts the currently playing song */
@@ -161,7 +145,7 @@ void wcsound_music_adjust(char *name)
 	if (fmod_music_type == FMOD_SOUND_TYPE_MIDI)
 	{
 		/* Set the reverb */
-		if (fmod_system->setReverbProperties(0, &fmod_music_reverb) != FMOD_OK)
+		if (fmod_sound_system->setReverbProperties(0, &fmod_music_reverb) != FMOD_OK)
 		{
 			/* Can't do this */
 			puts("Could not enable reverb effect");
@@ -178,7 +162,7 @@ void wcsound_music_adjust(char *name)
 	else
 	{
 		/* Set the reverb */
-		if (fmod_system->setReverbProperties(0, &fmod_no_music_reverb) != FMOD_OK)
+		if (fmod_sound_system->setReverbProperties(0, &fmod_no_music_reverb) != FMOD_OK)
 		{
 			/* Can't do this */
 			puts("Could not disable reverb effect");
@@ -244,13 +228,13 @@ int wcsound_music_play(char *name)
 	if (fmod_music_sound)
 		wcsound_music_stop();
 	/* Attempt to play music */
-	if (fmod_system->createSound(name, FMOD_DEFAULT, &info, &fmod_music_sound) != FMOD_OK)
+	if (fmod_sound_system->createSound(name, FMOD_DEFAULT, &info, &fmod_music_sound) != FMOD_OK)
 	{
 		/* Bah */
 		printf("Could not load %s", name);
 		return 0;
 	}
-	if (fmod_system->playSound(fmod_music_sound, 0, false, &fmod_music_channel) != FMOD_OK)
+	if (fmod_sound_system->playSound(fmod_music_sound, 0, false, &fmod_music_channel) != FMOD_OK)
 	{
 		/* Bleh */
 		printf("Could not prepare %s", name);

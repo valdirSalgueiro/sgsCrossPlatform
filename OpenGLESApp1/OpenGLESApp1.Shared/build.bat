@@ -14,4 +14,4 @@ rem D:\_Downloads\emsdk-portable-64bit\emscripten\1.37.22\emcc -O2 fmod.bc libSG
 
 rem D:\_Downloads\emsdk-portable-64bit\emscripten\1.37.22\emcc -O2 fmod.bc libSGSWeb.bc -s TOTAL_MEMORY=167772160 -o final.html --preload-file ../res@/
 
-D:\_Downloads\emsdk-portable-64bit\emscripten\1.37.22\emcc -O2 fmodL.bc fmodstudioL.bc libSGSWeb.bc -s TOTAL_MEMORY=167772160 -o final.html --preload-file ../res@/ --shell-file shell_minimal.html
+D:\_Downloads\emsdk-portable-64bit\emscripten\1.37.22\emcc -O2 fmod.bc libSGSWeb.bc -s TOTAL_MEMORY=167772160 -o final.html --preload-file ../res@/ --shell-file shell_minimal.html
