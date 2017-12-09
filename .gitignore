@@ -5,3 +5,5 @@ packages/
 .workspace/
 OpenGLESApp1/OpenGLESApp1.Shared/CMakeFiles/
 OpenGLESApp1/OpenGLESApp1.Shared/CMakeCache.txt
+OpenGLESApp1/OpenGLESApp1.Shared/final.js
+OpenGLESApp1/OpenGLESApp1.Shared/libSGSWeb.bc
