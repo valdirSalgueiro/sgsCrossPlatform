@@ -106,7 +106,7 @@ void App::Run()
 	EGLint panelHeight = 0;
 	eglQuerySurface(mEglDisplay, mEglSurface, EGL_WIDTH, &panelWidth);
 	eglQuerySurface(mEglDisplay, mEglSurface, EGL_HEIGHT, &panelHeight);
-	engine->init(800, 480);
+	engine->init(panelWidth, panelHeight);
 
 	while (!mWindowClosed)
 	{
@@ -223,12 +223,12 @@ void App::OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::Ke
 {
 	if (args->VirtualKey == Windows::System::VirtualKey::Right)
 		dir |= Engine::DIRECTION::RIGHT;
-	else if (args->VirtualKey == Windows::System::VirtualKey::Left)
+	if (args->VirtualKey == Windows::System::VirtualKey::Left)
 		dir |= Engine::DIRECTION::LEFT;
 
 	if (args->VirtualKey == Windows::System::VirtualKey::Up)
 		dir |= Engine::DIRECTION::UP;
-	else if (args->VirtualKey == Windows::System::VirtualKey::Down)
+	if (args->VirtualKey == Windows::System::VirtualKey::Down)
 		dir |= Engine::DIRECTION::DOWN;
 
 	if (args->VirtualKey == Windows::System::VirtualKey::Z)

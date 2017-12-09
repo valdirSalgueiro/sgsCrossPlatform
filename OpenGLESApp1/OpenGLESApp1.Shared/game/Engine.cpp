@@ -331,22 +331,22 @@ void Engine::reset() {
 	//
 	framesShoot = 0;
 	direction = 0;
-	nuvemX = 800;
-	nuvem2X = 1200;
-	nuvem3X = 1400;
-	nuvem4X = 1500;
+	nuvemX = 1600;
+	nuvem2X = 2400;
+	nuvem3X = 2800;
+	nuvem4X = 3000;
 
 	score = 0;
 	shield = 100;
 
-	nave[0].x = -1500;
-	nave[1].x = -1500;
-	nave[2].x = -750;
-	nave[3].x = -320;
+	nave[0].x = -3000;
+	nave[1].x = -3000;
+	nave[2].x = -1500;
+	nave[3].x = -640;
 	nave[4].x = 0;
 
 	montanhaX = 0;
-	montanha2X = 960;
+	montanha2X = 1920;
 
 	turn = 0;
 
@@ -590,31 +590,31 @@ void Engine::update(float time) {
 			montanha2X--;
 		}
 
-		if (montanhaX < -959) {
-			montanhaX = 960;
+		if (montanhaX < -1918) {
+			montanhaX = 1920;
 		}
-		if (montanha2X < -959) {
-			montanha2X = 960;
+		if (montanha2X < -1918) {
+			montanha2X = 1920;
 		}
 
 		nuvemX -= 8;
-		if (nuvemX < -929 * 2) {
-			nuvemX = 800;
+		if (nuvemX < -1858 * 2) {
+			nuvemX = 1600;
 		}
 
 		nuvem2X -= 4;
-		if (nuvem2X < -1024 * 2) {
-			nuvem2X = 800;
+		if (nuvem2X < -2048 * 2) {
+			nuvem2X = 1600;
 		}
 
 		nuvem3X -= 2;
-		if (nuvem3X < -304 * 2) {
-			nuvem3X = 800;
+		if (nuvem3X < -608 * 2) {
+			nuvem3X = 1600;
 		}
 
 		nuvem4X -= 1;
-		if (nuvem4X < -138 * 2) {
-			nuvem4X = 800;
+		if (nuvem4X < -276 * 2) {
+			nuvem4X = 1600;
 		}
 
 		nave[4].x += 0.2f;
@@ -739,27 +739,27 @@ void Engine::render(float time) {
 	else {
 		spriteBatchBegin();
 
-		glSprite(-50, 0, GL2D_SCALE_TO_SCREEN, fundo);
+		glSprite(-50, 0, GL2D_BACKGROUND | GL2D_SCALE_TO_SCREEN, fundo);
 
-		glSprite(670, 100, GL2D_CENTER | GL2D_NO_SCALE, lua, 0, 0, 0.5f, 0.5f);
+		glSprite(1340, 200, GL2D_CENTER | GL2D_NO_SCALE, lua, 0, 0, 1, 1);
 
-		glSprite(montanhaX, 160, GL2D_NO_SCALE, montanha, 0, 0, 0.5f, 0.5f, 1, 1, 1, 0.3f);
-		glSprite(montanha2X, 160, GL2D_NO_SCALE, montanha, 0, 0, 0.5f, 0.5f, 1, 1, 1, 0.3f);
+		glSprite(montanhaX, 320, GL2D_NO_SCALE, montanha, 0, 0, 1, 1, 1, 1, 1, 0.3f);
+		glSprite(montanha2X, 320, GL2D_NO_SCALE, montanha, 0, 0, 1, 1, 1, 1, 1, 0.3f);
 
-		glSprite(nave[4].x, 0, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 0.2, 0.2, 100.0f, 100.0f, 100.0f, 58.0f, 106.0f / 255.0f, 129.0f / 255.0f, 255.0f / 255.0f, 0);
-		glSprite(nave[3].x, 20, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 0.4, 0.4, 100.0f, 100.0f, 100.0f, 89.0f, 106.0f / 255.0f, 129.0f / 255.0f, 255.0f / 255.0f, 0);
-		glSprite(nave[2].x, 40, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 0.6, 0.6, 100.0f, 100.0f, 100.0f, 76.0f, 120.0f / 255.0f, 111.0f / 255.0f, 255.0f / 255.0f, 0);
-		glSprite(nave[1].x, 80, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 0.8, 0.8, 100.0f, 100.0f, 100.0f, 100.0f, 97.0f / 255.0f, 78.0f / 255.0f, 255.0f / 255.0f, 0);
-		glSprite(nave[0].x, 40, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 1, 1, 100.0f, 100.0f, 100.0f, 100.0f, 227.0f / 255.0f, 106.0f / 255.0f, 83.0f / 255.0f, 0);
+		glSprite(nave[4].x, 0, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 0.4, 0.4, 100.0f, 100.0f, 100.0f, 58.0f, 106.0f / 255.0f, 129.0f / 255.0f, 255.0f / 255.0f, 0);
+		glSprite(nave[3].x, 40, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 0.8, 0.8, 100.0f, 100.0f, 100.0f, 89.0f, 106.0f / 255.0f, 129.0f / 255.0f, 255.0f / 255.0f, 0);
+		glSprite(nave[2].x, 80, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 1.2, 1.2, 100.0f, 100.0f, 100.0f, 76.0f, 120.0f / 255.0f, 111.0f / 255.0f, 255.0f / 255.0f, 0);
+		glSprite(nave[1].x, 160, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 1.6, 1.6, 100.0f, 100.0f, 100.0f, 100.0f, 97.0f / 255.0f, 78.0f / 255.0f, 255.0f / 255.0f, 0);
+		glSprite(nave[0].x, 80, GL2D_FLIP_H | GL2D_NO_SCALE | GL2D_COLOR_ADVANCED, naveColonizadora, false, 0, 2, 2, 100.0f, 100.0f, 100.0f, 100.0f, 227.0f / 255.0f, 106.0f / 255.0f, 83.0f / 255.0f, 0);
 		//glSprite(nave[0].x+25,nave[0].y+65,GL2D_FLIP_H|GL2D_NO_SCALE|GL2D_COLOR_ADVANCED,purpurinanave,false,0,1,1,100.0f,100.0f,100.0f,100.0f,227.0f/255.0f,106.0f/255.0f,83.0f/255.0f,0);	
 
 
 
-		glSprite(nuvem4X, 240, GL2D_NO_SCALE, nuvem4, false, 0, 1, 1, 1, 1, 1, 1);
+		glSprite(nuvem4X, 480, GL2D_NO_SCALE, nuvem4, false, 0, 2, 2, 1, 1, 1, 1);
 
-		glSprite(nuvem3X, 240, GL2D_NO_SCALE, nuvem2, false, 0, 1.0f, 1.0f, 1, 1, 1, 1);
+		glSprite(nuvem3X, 480, GL2D_NO_SCALE, nuvem2, false, 0, 2, 2, 1, 1, 1, 1);
 
-		glSprite(nuvem2X, 240, GL2D_NO_SCALE, nuvem3, false, 0, 0.5f, 0.5f, 1, 1, 1, 1);
+		glSprite(nuvem2X, 480, GL2D_NO_SCALE, nuvem3, false, 0, 1, 1, 1, 1, 1, 1);
 
 		//inimigos
 		for (int i = 0; i < enemies.size(); ++i) {
@@ -806,7 +806,7 @@ void Engine::render(float time) {
 			iter++;
 		}
 
-		glSprite(nuvemX, 267, GL2D_NO_SCALE, nuvem1, 0, 0, 1.0f, 1.0f);
+		glSprite(nuvemX, 534, GL2D_NO_SCALE, nuvem1, 0, 0, 2.0f, 2.0f);
 
 		//glSprite(playerX,playerY+80,GL2D_CENTER,point,0,0,75,75);
 
@@ -832,7 +832,7 @@ void Engine::render(float time) {
 
 			}
 			else {
-				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(320, 240, "POWER UP!", 0xffffff, 0x000000);
+				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(640, 58, "POWER UP!", 0xffffff, 0x000000);
 			}
 		}
 
@@ -849,12 +849,12 @@ void Engine::render(float time) {
 					warning->play();
 					warningPlayed = true;
 				}
-				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(320, 240, "WARNING!", 0xff0000, 0x000000);
+				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(640, 480, "WARNING!", 0xff0000, 0x000000);
 			}
 		}
 
 		if (!started) {
-			glSprite(435, 400, GL2D_CENTER | GL2D_NO_SCALE, painel, false, 0, 0.7f, 0.7f);
+			glSprite(870, 800, GL2D_CENTER | GL2D_NO_SCALE, painel, false, 0, 1.4f, 1.4f);
 
 			max_->render(time);
 			tammy->render(time);
@@ -867,15 +867,15 @@ void Engine::render(float time) {
 					warning->play();
 					warningPlayed = true;
 				}
-				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(400 - widths[6] / 2, 240, "MISSION START!", 0xffffff, 0x000000);
+				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(800 - widths[6] / 2, 480, "MISSION START!", 0xffffff, 0x000000);
 			}
 
-			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(420 - widths[0] / 2, 340, "OK, MAX! YOUR FIRST MISSION IS TO BREAKTRHOUGH", 0xffffff, 0x000000);
-			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(420 - widths[1] / 2, 360, "THE ENEMY FRONTLINE! THE ENEMY FORCES ARE", 0xffffff, 0x000000);
-			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(420 - widths[2] / 2, 380, "COMPOSED OF BIOMECHANICHAL LIFEFORMS,", 0xffffff, 0x000000);
-			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(420 - widths[3] / 2, 400, "UNKNOWN TO US!", 0xffffff, 0x000000);
-			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(420 - widths[4] / 2, 420, "I'LL SEE YOU BEHIND ENEMY LINES!", 0xffffff, 0x000000);
-			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(420 - widths[5] / 2, 445, "GOOD LUCK!", 0xffff00, 0x000000);
+			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(840 - widths[0] / 2, 680, "OK, MAX! YOUR FIRST MISSION IS TO BREAKTRHOUGH", 0xffffff, 0x000000);
+			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(840 - widths[1] / 2, 720, "THE ENEMY FRONTLINE! THE ENEMY FORCES ARE", 0xffffff, 0x000000);
+			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(840 - widths[2] / 2, 760, "COMPOSED OF BIOMECHANICHAL LIFEFORMS,", 0xffffff, 0x000000);
+			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(840 - widths[3] / 2, 800, "UNKNOWN TO US!", 0xffffff, 0x000000);
+			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(840 - widths[4] / 2, 840, "I'LL SEE YOU BEHIND ENEMY LINES!", 0xffffff, 0x000000);
+			m_pFontAtlas->GetFont(AHB_20)->DrawStringShadow(840 - widths[5] / 2, 890, "GOOD LUCK!", 0xffff00, 0x000000);
 		}
 #endif
 

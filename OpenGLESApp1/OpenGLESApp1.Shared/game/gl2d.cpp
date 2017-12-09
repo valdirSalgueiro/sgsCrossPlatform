@@ -121,7 +121,7 @@ GLuint loadTexture(const std::string filename, int &width, int &height)
 		return TEXTURE_LOAD_ERROR;
 	}
 	// set the individual row_pointers to point at the correct offsets of image_data
-	for (int i = 0; i < height; ++i) 
+	for (int i = 0; i < height; ++i)
 	{
 #ifdef WIN32
 		row_pointers[height - 1 - i] = image_data + i * rowbytes;
@@ -172,6 +172,22 @@ void startBatch(const int width, const int height)
 	gWidth = width;
 	gHeight = height;
 	//spriteBatch = new GLES11SpriteBatch(width, height);
+
+	//auto scale = outputSize / sourceSize;
+	//var offset = Vector2.Zero;
+
+	//// Letterbox or pillarbox to preserve aspect ratio.
+	//if (scale.X > scale.Y)
+	//{
+	//	scale.X = scale.Y;
+	//	offset.X = (outputSize.X - sourceSize.X * scale.X) / 2;
+	//}
+	//else
+	//{
+	//	scale.Y = scale.X;
+	//	offset.Y = (outputSize.Y - sourceSize.Y * scale.Y) / 2;
+	//}
+
 	spriteBatch = new GLES2SpriteBatch(width, height);
 }
 
@@ -286,17 +302,24 @@ void spriteBatchDraw(int x, int y, int flipmode, const glImage *spr, bool rotate
 	float scaleX;
 	float scaleY;
 
-	scaleX = gWidth / 800.0f;
-	scaleY = gHeight / 480.0f;
+	scaleX = gWidth / 1600.0f;
+	scaleY = gHeight / 960.0f;
 
 	if (flipmode & GL2D_SCALE_TO_SCREEN) {
-		scaleX = spr->width / 800.0f;
-		scaleY = spr->height / 480.0f;
+		scaleX = (float)gWidth / (float)spr->width;
+		scaleY = (float)gHeight / (float)spr->height;
+		if (flipmode & GL2D_BACKGROUND) 
+		{
+			scaleX *= 1.1;
+		}
 	}
-	else if (!(flipmode & GL2D_NO_SCALE)) {
-		scaleX *= 0.5f;
-		scaleY *= 0.5f;
-	}
+	//else if (!(flipmode & GL2D_NO_SCALE)) {
+	//	//if (gWidth <= 800) 
+	//	//{
+	//		scaleX *= 0.5f;
+	//		scaleY *= 0.5f;
+	//	//}
+	//}
 
 	sdi.setTargetPos(x*scaleX, gHeight - (y*scaleY));
 
@@ -370,7 +393,7 @@ void spriteBatchDraw(int x, int y, int flipmode, const glImage *spr, bool rotate
 	}
 
 	spriteBatch->draw(&sdi);
-}
+	}
 
 void glFree() {
 	if (spriteBatch != NULL)
