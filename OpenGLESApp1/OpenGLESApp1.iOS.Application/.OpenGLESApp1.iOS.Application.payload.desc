@@ -1,15 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <payload>
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\AppDelegate.h" changed="2017-12-08T14:35:17.4956561-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\AppDelegate.mm" changed="2017-12-08T14:35:17.4976647-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\Base.lproj\Main.storyboard" changed="2017-12-08T14:35:17.5046806-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\GameViewController.h" changed="2017-12-08T14:35:17.5076884-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\GameViewController.mm" changed="2017-12-08T14:35:17.51571-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\vcreference.xcconfig" changed="2017-12-08T14:35:17.517715-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\main.mm" changed="2017-12-08T14:35:17.5237313-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\utilities.h" changed="2017-12-08T14:35:17.5297468-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\utilities.mm" changed="2017-12-08T14:35:17.5397762-02:00" />
-  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS.Application.xcodeproj\project.pbxproj" changed="2017-12-08T14:35:17.4089856-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS.Application.xcodeproj\project.pbxproj" changed="2017-12-08T16:52:55.8753927-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\utilities.mm" changed="2017-12-08T15:50:08.2074354-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\utilities.h" changed="2017-12-08T15:50:08.2054298-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\\vcreference.xcconfig" changed="2017-12-08T16:38:42.2761853-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\res\1.png" changed="2017-12-08T13:46:17.5142477-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\res\alien1.wav" changed="2017-12-08T13:46:17.5302898-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\res\aliendie1.wav" changed="2017-12-08T13:46:17.5403497-02:00" />
@@ -34,5 +28,16 @@
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\res\tiro.png" changed="2017-12-08T13:46:17.8946924-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\res\tiro.wav" changed="2017-12-08T13:46:17.9008525-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\res\warning.wav" changed="2017-12-08T13:46:17.9061329-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\AppDelegate.mm" changed="2017-12-08T15:50:08.1773562-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\GameViewController.mm" changed="2017-12-08T16:39:06.1898387-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\main.mm" changed="2017-12-08T15:50:08.2034247-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\AppDelegate.h" changed="2017-12-08T15:50:08.173345-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\GameViewController.h" changed="2017-12-08T15:50:08.1883858-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\Info.plist" changed="2017-12-04T21:22:25.221285-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\Base.lproj\Main.storyboard" changed="2017-12-08T15:50:08.1833722-02:00" />
   <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\OpenGLESApp1.iOS\Images.xcassets\AppIcon.appiconset\Contents.json" changed="2017-12-08T13:46:17.5122421-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.Application\vcreference.xcconfig" changed="2017-12-08T16:38:42.2761853-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.StaticLibrary\x64\Debug\OpenGLESApp1.iOS.StaticLibrary.xcodeproj\project.pbxproj" changed="2017-12-08T16:41:23.1606896-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.StaticLibrary\x64\Debug\OpenGLESApp1.iOS.StaticLibrary.xcodeproj\project.xcworkspace\contents.xcworkspacedata" changed="2017-12-08T16:05:27.4724116-02:00" />
+  <file path="C:\Users\valdir\Documents\sgsCrossPlatform\OpenGLESApp1\OpenGLESApp1.iOS.StaticLibrary\x64\Debug\OpenGLESApp1.iOS.StaticLibrary.xcodeproj\xcuserdata\valdir.xcuserdatad\xcschemes\xcschememanagement.plist" changed="2017-12-08T16:05:27.5205402-02:00" />
 </payload>

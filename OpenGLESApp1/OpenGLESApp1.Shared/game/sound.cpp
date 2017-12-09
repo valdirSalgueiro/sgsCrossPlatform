@@ -475,7 +475,7 @@ void sound::pool(char *f)
 	/* Not found, add new */
 	se = (sound_entry*)malloc(sizeof(sound_entry));
 	std::string final;
-#ifndef _WIN32
+#ifdef __ANDROID_API__
 	final = "file:///android_asset/";
 #endif
 
@@ -501,7 +501,7 @@ void sound::pool(char *f)
 void sound::init(char *f, int v, int t, int b)
 {
 	/* Get settings */
-	chan = 0;
+	//chan = 0;
 	filename = f;
 	volume = v;
 	tempo = t;
@@ -521,6 +521,8 @@ sound::sound(char *f, int v, int t, int b)
 	/* Pass through */
 	init(f, v, t, b);
 }
+
+FMOD::Channel *chan = 0;
 
 /* Play sound once */
 void sound::play()

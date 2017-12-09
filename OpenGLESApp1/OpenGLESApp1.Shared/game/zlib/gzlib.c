@@ -4,16 +4,20 @@
  */
 
 #include "gzguts.h"
+#if defined(__WEB__)
+#include <unistd.h>
+#endif
 
 #if defined(_WIN32) && !defined(__BORLANDC__) && !defined(__MINGW32__)
 #  define LSEEK _lseeki64
-#else
+#else 
 #if defined(_LARGEFILE64_SOURCE) && _LFS64_LARGEFILE-0
 #  define LSEEK lseek64
 #else
 #  define LSEEK lseek
 #endif
 #endif
+
 
 /* Local functions */
 local void gz_reset OF((gz_statep));

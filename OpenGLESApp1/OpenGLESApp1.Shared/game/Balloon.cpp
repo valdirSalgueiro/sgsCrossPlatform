@@ -29,7 +29,8 @@ const unsigned int balloon_texcoords[] = {
 extern std::vector<Object*> objs;
 
 glImage sprBalloon[20];
-int BalloonAnimation=0;
+int BalloonAnimation=0; 
+
 int signBaloon=1;
 int olDenergy=0;
 

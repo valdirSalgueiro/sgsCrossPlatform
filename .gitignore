@@ -3,3 +3,5 @@ ARM/
 Debug/
 packages/
 .workspace/
+OpenGLESApp1/OpenGLESApp1.Shared/CMakeFiles/
+OpenGLESApp1/OpenGLESApp1.Shared/CMakeCache.txt

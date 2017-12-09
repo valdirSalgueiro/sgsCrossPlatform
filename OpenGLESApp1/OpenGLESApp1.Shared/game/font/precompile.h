@@ -22,7 +22,9 @@
 
 #include <OpenGLES/ES2/gl.h>
 #else // __ANDROID__ or _WIN32
+#if !defined(GLFW_INCLUDE_ES2)
 #include <GLES2/gl2.h>
+#endif
 #endif
 //#include <boost/unordered_map.hpp>  
 //#define fmap boost::unordered_map

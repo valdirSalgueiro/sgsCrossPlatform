@@ -79,7 +79,7 @@ namespace FMOD {
 class sound
 {
 private:
-	FMOD::Channel *chan;
+	//FMOD::Channel *chan;
 	void *data;
 	char *filename;
 	int volume;
