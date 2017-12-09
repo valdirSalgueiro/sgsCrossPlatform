@@ -133,6 +133,7 @@
     </AppxManifest>
     <None Include="..\fmod_X64.dll">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
     </None>
     <None Include="..\res\SGSMovie.avi" />
     <None Include="OpenGLESApp1_TemporaryKey.pfx" />

@@ -389,8 +389,8 @@ void App::InitializeEGL(CoreWindow^ window)
 	// the full window size. The scaling is often free on mobile hardware.
 	//
 	// One way to configure the SwapChainPanel is to specify precisely which resolution it should render at.
-	// Size customRenderSurfaceSize = Size(800, 600);
-	// surfaceCreationProperties->Insert(ref new String(EGLRenderSurfaceSizeProperty), PropertyValue::CreateSize(customRenderSurfaceSize));
+	Size customRenderSurfaceSize = Size(1600, 960);
+	surfaceCreationProperties->Insert(ref new String(EGLRenderSurfaceSizeProperty), PropertyValue::CreateSize(customRenderSurfaceSize));
 	//
 	// Another way is to tell the SwapChainPanel to render at a certain scale factor compared to its size.
 	// e.g. if the SwapChainPanel is 1920x1280 then setting a factor of 0.5f will make the app render at 960x640

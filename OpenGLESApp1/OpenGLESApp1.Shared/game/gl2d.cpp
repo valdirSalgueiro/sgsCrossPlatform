@@ -6,6 +6,7 @@
 //#include "jniUtil.h"
 //#endif
 //#include <Windows.h>
+#include <Vector2D.h>
 #include <string>
 
 #include <string>
@@ -171,22 +172,23 @@ void startBatch(const int width, const int height)
 {
 	gWidth = width;
 	gHeight = height;
-	//spriteBatch = new GLES11SpriteBatch(width, height);
 
-	//auto scale = outputSize / sourceSize;
-	//var offset = Vector2.Zero;
+	Vector2D<float> sourceSize = Vector2D<float>(1600, 960);
+	Vector2D<float> outputSize = Vector2D<float>(width, height);
+	Vector2D<float> ratioScale = sourceSize / outputSize;
+	Vector2D<float> ratioOffset;
 
-	//// Letterbox or pillarbox to preserve aspect ratio.
-	//if (scale.X > scale.Y)
-	//{
-	//	scale.X = scale.Y;
-	//	offset.X = (outputSize.X - sourceSize.X * scale.X) / 2;
-	//}
-	//else
-	//{
-	//	scale.Y = scale.X;
-	//	offset.Y = (outputSize.Y - sourceSize.Y * scale.Y) / 2;
-	//}
+	// Letterbox or pillarbox to preserve aspect ratio.
+	if (ratioScale.x > ratioScale.y)
+	{
+		ratioScale.x = ratioScale.y;
+		ratioOffset.x = (outputSize.x - sourceSize.x * ratioScale.x) / 2;
+	}
+	else
+	{
+		ratioScale.y = ratioScale.x;
+		ratioOffset.y = (outputSize.y - sourceSize.y * ratioScale.y) / 2;
+	}
 
 	spriteBatch = new GLES2SpriteBatch(width, height);
 }
@@ -299,27 +301,17 @@ void spriteBatchDestroy() {
 void spriteBatchDraw(int x, int y, int flipmode, const glImage *spr, bool rotate, const float angle, const float scale1, const float scale2, float r, float g, float b, float a, float rb, float gb, float bb, float ab) {
 	SpriteDrawInfo sdi;
 	sdi.textureHandle = spr->textureID;
-	float scaleX;
-	float scaleY;
-
-	scaleX = gWidth / 1600.0f;
-	scaleY = gHeight / 960.0f;
+	float scaleX = 1;
+	float scaleY = 1;
 
 	if (flipmode & GL2D_SCALE_TO_SCREEN) {
-		scaleX = (float)gWidth / (float)spr->width;
-		scaleY = (float)gHeight / (float)spr->height;
+		scaleX = (float)1600 / (float)spr->width;
+		scaleY = (float)960 / (float)spr->height;
 		if (flipmode & GL2D_BACKGROUND) 
 		{
 			scaleX *= 1.1;
 		}
 	}
-	//else if (!(flipmode & GL2D_NO_SCALE)) {
-	//	//if (gWidth <= 800) 
-	//	//{
-	//		scaleX *= 0.5f;
-	//		scaleY *= 0.5f;
-	//	//}
-	//}
 
 	sdi.setTargetPos(x*scaleX, gHeight - (y*scaleY));
 
