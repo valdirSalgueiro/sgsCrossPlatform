@@ -163,7 +163,10 @@ bool Boss2::render(float time){
 	std::vector<Animation*>::iterator iter = animations.begin();
 	while (iter != animations.end())
 	{
-		glSprite(pos.x/2,pos.y/2,GL2D_CENTER | GL2D_NO_SCALE,&sprBoss2[boss2_sequence[(*iter)->currentFrame]]);
+		if (wasHurt)
+			glSprite(pos.x, pos.y, GL2D_CENTER, &sprBoss2[boss2_sequence[(*iter)->currentFrame]], false, 0, 2, 2, 100, 100, 100);
+		else
+			glSprite(pos.x,pos.y,GL2D_CENTER,&sprBoss2[boss2_sequence[(*iter)->currentFrame]],0,0,2,2);
 		iter++;
 	}
 	return true;

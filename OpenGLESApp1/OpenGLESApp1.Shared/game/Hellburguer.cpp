@@ -120,7 +120,7 @@ bool Hellburguer::update(float time) {
 
 bool Hellburguer::render(float time) {
 	if (wasHurt) {
-		glSprite(pos.x, pos.y, GL2D_CENTER | GL2D_COLOR_ADVANCED, &sprHB[hbAnimation], false, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0);
+		glSprite(pos.x, pos.y, GL2D_CENTER, &sprHB[hbAnimation], false, 0, 1, 1, 100,100,100,100);
 	}
 	else {
 		glSprite(pos.x, pos.y, GL2D_CENTER, &sprHB[hbAnimation]);

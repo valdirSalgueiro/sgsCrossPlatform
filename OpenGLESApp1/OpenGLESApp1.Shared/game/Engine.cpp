@@ -832,7 +832,7 @@ void Engine::render(float time) {
 
 			}
 			else {
-				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(640, 58, "POWER UP!", 0xffffff, 0x000000);
+				m_pFontAtlas->GetFont(AHB_44)->DrawStringShadow(640, 480, "POWER UP!", 0xffffff, 0x000000);
 			}
 		}
 

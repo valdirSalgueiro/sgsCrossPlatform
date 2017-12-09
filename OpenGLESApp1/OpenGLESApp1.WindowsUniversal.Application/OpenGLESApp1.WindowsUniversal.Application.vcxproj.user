@@ -12,4 +12,8 @@
     <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
     <DebuggerMachineName>XBOXONE</DebuggerMachineName>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
+    <DebuggerMachineName>XBOXONE</DebuggerMachineName>
+  </PropertyGroup>
 </Project>

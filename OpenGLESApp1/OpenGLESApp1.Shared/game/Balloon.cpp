@@ -133,7 +133,10 @@ bool Balloon::update(float time) {
 
 
 bool Balloon::render(float time){
-	glSprite(pos.x,pos.y,GL2D_CENTER,&sprBalloon[BalloonAnimation],false,0,2,2);
+	if(wasHurt)
+		glSprite(pos.x, pos.y, GL2D_CENTER, &sprBalloon[BalloonAnimation], false, 0, 2, 2,100,100,100);
+	else
+		glSprite(pos.x,pos.y,GL2D_CENTER,&sprBalloon[BalloonAnimation],false,0,2,2);
 	return true;
 }
 
