@@ -33,6 +33,10 @@ Homemade cross platform Open GLES 2.0 engine codenamed "greenjuice team engine"
 - Opengl Es 2
 - EGL
 - GLFW
+- FMOD
+- Zlib
+- Tinyxml
+- Emscripten
 
 # Credits
 - Valdir Salgueiro - Developer
