@@ -36,6 +36,7 @@ Homemade cross platform Open GLES 2.0 engine codenamed "greenjuice team engine"
 - FMOD
 - Zlib
 - Tinyxml
+- Emscripten
 
 # Credits
 - Valdir Salgueiro - Developer
