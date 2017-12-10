@@ -7,15 +7,14 @@ We are looking for feedback with this release. Currently there is one stage, som
 The stage will keep looping after the last boss is defeated.
 
 # Screenshots
-- ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-04-16-02.png)
-- ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-04-44-68.png)
-- ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-04-59-45.png)
-- ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-05-58-80.png)
-- ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-05-59-29.png)
-- ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-06-29-71.png)
-- ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-06-39-19.png)
-- ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-07-42-24.png)
-- ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-07-48-48.png)
+ ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-04-16-02.png)
+ ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-04-44-68.png)
+ ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-04-59-45.png)
+ ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-05-58-80.png)
+
+ ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-06-39-19.png)
+ ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/SGS%202012-12-18%2023-07-42-24.png)
+
 
 # Engine
 Homemade cross platform Open GLES 2.0 engine codenamed "greenjuice team engine"
