@@ -1,0 +1,9 @@
+https://docs.microsoft.com/en-us/windows/uwp/xbox-live/leaderboards-and-stats-2017/leaderboards
+https://docs.microsoft.com/en-us/windows/uwp/xbox-live/data-platform/data-platform
+https://docs.microsoft.com/en-us/windows/uwp/publish/index
+https://docs.microsoft.com/en-us/windows/uwp/xbox-live/get-started-with-creators/add-stats-and-leaderboards-in-unity
+https://docs.microsoft.com/en-us/windows/uwp/xbox-live/samples
+https://docs.microsoft.com/en-us/windows/uwp/xbox-live/leaderboards-and-stats-2017/player-stats-configure-2017
+https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop
+https://docs.microsoft.com/en-us/windows/uwp/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators
+https://docs.microsoft.com/en-us/windows/uwp/xbox-live/get-started-with-creators/authorize-xbox-live-accounts
