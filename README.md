@@ -1,4 +1,4 @@
-#Singularity Gear Squad
+# Singularity Gear Squad
 
 Defeat hordes of biomechanical aliens in this shmup game.
 
@@ -6,31 +6,31 @@ We are looking for feedback with this release. Currently there is one stage, som
 
 The stage will keep looping after the last boss is defeated.
 
-#Screenshots
+# Screenshots
 Homemade cross platform Open GLES 2.0 engine codenamed "greenjuice team engine"
 
-#Engine
+# Engine
 Homemade cross platform Open GLES 2.0 engine codenamed "greenjuice team engine"
 
-#Current supported platforms
+# Current supported platforms
 ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/dl_android.png)
 ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/dl_apple.png)
 ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/dl_html5.gif)
 ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/dl_uwp.png)
 ![alt](https://raw.githubusercontent.com/valdirSalgueiro/sgsCrossPlatform/master/promotion/xbox-icon-21.png)
 
-#Libraries
-Freetype
-Libpng
-Bulletml
-Opengl Es 2
-EGL
-GLFW
+# Libraries
+- Freetype
+- Libpng
+- Bulletml
+- Opengl Es 2
+- EGL
+- GLFW
 
-#Credits
-Valdir Salgueiro - Developer
-PH (Paulo Henrique) - Artist
+# Credits
+- Valdir Salgueiro - Developer
+- PH (Paulo Henrique) - Artist
 
-#License
-MIT
-Assets are licensed to PH (Paulo Henrique)
+# License
+- Source code : MIT
+- Assets are licensed to PH (Paulo Henrique)
